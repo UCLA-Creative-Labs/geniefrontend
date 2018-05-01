@@ -1,6 +1,7 @@
 import React from "react";
 
 import Button from "../components/Button";
+import SearchBar from "../components/SearchBar";
 
 class Display extends React.Component {
 	constructor(props) {
@@ -16,6 +17,7 @@ class Display extends React.Component {
 		return (
 			<div className="display">
 				<Button label="hello" color="primary" onClick={onClickNull} />
+				<SearchBar/>
 			</div>
 		);
 	}
