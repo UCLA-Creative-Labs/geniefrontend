@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-const SearchBar = props => (
-    <div class="search">
-        <img class="glass" src={require('../../assets/images/search.png')}/>
-        <input class="search-text" type="search" placeholder="Search..."/>
-    </div>
+const SearchBar = () => (
+  <div className="search">
+    <img className="glass" src={require('../../assets/images/search.png')} />
+    <input className="search-text" type="search" placeholder="Search..." />
+  </div>
 );
 
 export default SearchBar;
