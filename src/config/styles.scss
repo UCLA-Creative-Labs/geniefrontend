@@ -1,5 +1,7 @@
 $primary: #ff7575;
 $secondary: #ffd69e;
+$font-family:  "Avenir Black";
+
 
 @mixin hover-state {
     &:hover, &:active, &:focus {

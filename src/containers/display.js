@@ -1,27 +1,36 @@
-import React from "react";
+import React from 'react';
 
-import Button from "../components/Button";
-import SearchBar from "../components/SearchBar";
+import COMPONENTS, { getElement } from '../config/config';
 
 class Display extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {};
-	}
+  constructor(props) {
+    super(props);
+    this.state = {
+      components: [],
+    };
 
-	render() {
+    this.setComponents = this.setComponents.bind(this);
+  }
 
-		const onClickNull =
-			() => {}
+  componentDidMount() {
+    this.setComponents();
+  }
 
-		return (
-			<div className="display">
-				<Button label="hello" color="primary" onClick={onClickNull} />
-				<SearchBar/>
-			</div>
-		);
-	}
+  async setComponents() {
+    this.setState({
+      components: COMPONENTS,
+    });
+  }
+
+  render() {
+    return (
+      <div className="display">
+        {this.state.components.map((component, index) => (
+          getElement(component, index)
+        ))}
+      </div>
+    );
+  }
 }
-
 
 export default Display;

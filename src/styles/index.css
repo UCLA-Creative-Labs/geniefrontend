@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif; }
+  font-family: "Avenir Black"; }
 
 .btn {
   color: white;
@@ -13,6 +13,7 @@ body {
   padding: 0 20px 0 20px;
   cursor: pointer;
   margin-bottom: 10px;
+  font-family: "Avenir Black";
   -webkit-transition: all 0.75s ease;
   -moz-transition: all 0.75s ease;
   -ms-transition: all 0.75s ease;
