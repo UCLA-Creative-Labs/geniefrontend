@@ -10,7 +10,7 @@
 	padding: 0 20px 0 20px;
 	cursor: pointer;
 	margin-bottom: 10px;
-	font-family: $font-family;
+	font-family: $font-primary-black;
 
 	&-primary {
 		background-color: $primary; 
@@ -27,3 +27,4 @@
 
 	@include transition (all, .75s, ease)
 }
+
