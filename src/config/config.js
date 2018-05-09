@@ -21,7 +21,7 @@ export const getElement = (s, i) => {
       result = <Button key={i} label="card" color="primary" onClick={onClickNull} />;
       break;
     case 'SearchBar':
-      result = <SearchBar/>;
+      result = <SearchBar />;
       break;
     default:
       result = <Button key={i} label="default" color="primary" onClick={onClickNull} />;
