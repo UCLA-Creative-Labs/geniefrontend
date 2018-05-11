@@ -1,6 +1,7 @@
 import React from 'react';
 
 import COMPONENTS, { getElement } from '../config/config';
+import Card from '../components/Card';
 
 class Display extends React.Component {
   constructor(props) {
@@ -23,11 +24,20 @@ class Display extends React.Component {
   }
 
   render() {
+    const displayStyle = {
+      display: 'flex',
+      justifyContent: 'center',
+      alignContent: 'center',
+      padding: '5rem'
+    };
+
     return (
-      <div className="display">
-        {this.state.components.map((component, index) => (
-          getElement(component, index)
-        ))}
+      <div className="display" style={displayStyle}>
+        <Card>
+          {this.state.components.map((component, index) => (
+            getElement(component, index)
+          ))}
+        </Card>
       </div>
     );
   }
