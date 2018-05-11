@@ -1,0 +1,31 @@
+@import "../../config/styles";
+
+.stepper {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  padding: 5px 10px 5px 10px;
+  align-items: center;
+
+  h1 {
+    font-family: $font-primary-black;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .step-container {
+    display: flex;
+
+    .button-container {
+      width: 25px;
+      height: 25px;
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+
+      img {
+        width: 100%;
+      }
+    }
+
+  }
+}
