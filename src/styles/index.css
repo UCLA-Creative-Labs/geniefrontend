@@ -50,3 +50,20 @@ body {
   .btn:hover, .btn:active, .btn:focus {
     outline: 0;
     background-color: #ffd69e; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+.card {
+  box-shadow: 0px 0px 35px rgba(2, 2, 2, 0.18);
+  background: #FFFFFF;
+  width: fit-content; }
