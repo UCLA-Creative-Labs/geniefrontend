@@ -99,3 +99,21 @@ body {
       margin-left: 10px; }
       .stepper .step-container .button-container img {
         width: 100%; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+.img-container {
+  width: 220px; }
+  .img-container img {
+    width: 100%;
+    display: block; }
