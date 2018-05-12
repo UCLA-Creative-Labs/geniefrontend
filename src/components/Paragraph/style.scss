@@ -1,0 +1,11 @@
+@import '../../config/styles';
+
+.pg-container {
+  width: 200px;
+  padding: 10px;
+
+  .pg {
+    font-size: 10px;
+    font-family: $font-primary-medium;
+  }
+}
