@@ -87,13 +87,14 @@ body {
   align-items: center; }
   .stepper h1 {
     font-family: "Avenir Black";
-    font-size: 14px;
-    font-weight: 600; }
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0; }
   .stepper .step-container {
     display: flex; }
     .stepper .step-container .button-container {
-      width: 25px;
-      height: 25px;
+      width: 22px;
+      height: 22px;
       display: flex;
       align-items: center;
       margin-left: 10px; }
@@ -132,7 +133,8 @@ body {
 
 .pg-container {
   width: 200px;
-  padding: 10px; }
+  padding: 10px 10px 5px 10px; }
   .pg-container .pg {
     font-size: 10px;
-    font-family: "Avenir Medium"; }
+    font-family: "Avenir Medium";
+    margin: 0; }

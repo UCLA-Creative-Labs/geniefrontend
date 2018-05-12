@@ -2,10 +2,11 @@
 
 .pg-container {
   width: 200px;
-  padding: 10px;
+  padding: 10px 10px 5px 10px;
 
   .pg {
     font-size: 10px;
     font-family: $font-primary-medium;
+    margin: 0;
   }
 }

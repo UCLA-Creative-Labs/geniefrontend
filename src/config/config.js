@@ -7,10 +7,9 @@ import Paragraph from '../components/Paragraph';
 
 const COMPONENTS = [
   'Button',
-  'Card',
-  'InlineStepper',
   'Image',
-  'Paragraph'
+  'Paragraph',
+  'InlineStepper',
 ];
 
 const onClickNull = () => {};
@@ -22,9 +21,6 @@ export const getElement = (s, i) => {
   switch (s) {
     case 'Button':
       result = <Button key={i} label="button" color="primary" onClick={onClickNull} />;
-      break;
-    case 'Card':
-      result = <Button key={i} label="card" color="primary" onClick={onClickNull} />;
       break;
     case 'InlineStepper':
       result = <InlineStepper key={i} label="inline stepper" />;
