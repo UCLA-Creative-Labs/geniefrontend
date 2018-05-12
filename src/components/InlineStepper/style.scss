@@ -9,15 +9,16 @@
 
   h1 {
     font-family: $font-primary-black;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
+    margin: 0;
   }
   .step-container {
     display: flex;
 
     .button-container {
-      width: 25px;
-      height: 25px;
+      width: 22px;
+      height: 22px;
       display: flex;
       align-items: center;
       margin-left: 10px;
