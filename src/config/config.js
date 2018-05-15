@@ -4,10 +4,12 @@ import Button from '../components/Button';
 import Image from '../components/Image';
 import InlineStepper from '../components/InlineStepper';
 import Paragraph from '../components/Paragraph';
+import SearchBar from '../components/SearchBar';
 
 const COMPONENTS = [
   'Button',
   'Image',
+  'SearchBar',
   'Paragraph',
   'InlineStepper',
 ];
@@ -30,6 +32,9 @@ export const getElement = (s, i) => {
       break;
     case 'Paragraph':
       result = <Paragraph key={i} text={pgText} />;
+      break;
+    case 'SearchBar':
+      result = <SearchBar />;
       break;
     default:
       result = <Button key={i} label="default" color="primary" onClick={onClickNull} />;
