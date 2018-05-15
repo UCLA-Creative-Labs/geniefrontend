@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Button from '../components/Button';
+import Heading from '../components/Heading';
 import Image from '../components/Image';
 import InlineStepper from '../components/InlineStepper';
 import Paragraph from '../components/Paragraph';
@@ -9,6 +10,9 @@ import SearchBar from '../components/SearchBar';
 const COMPONENTS = [
   'Button',
   'Image',
+  'h1',
+  'h2',
+  'h3',
   'SearchBar',
   'Paragraph',
   'InlineStepper',
@@ -33,6 +37,14 @@ export const getElement = (s, i) => {
     case 'Paragraph':
       result = <Paragraph key={i} text={pgText} />;
       break;
+    case 'h1':
+      result = <Heading key={i} headingLevel={1} content="Heading 1" label="header" color="primary" onClick={onClickNull} />;
+      break;
+    case 'h2':
+      result = <Heading key={i} headingLevel={2} content="Heading 2" label="header" color="primary" onClick={onClickNull} />;
+      break;
+    case 'h3':
+      result = <Heading key={i} headingLevel={3} content="Heading 3" label="header" color="primary" onClick={onClickNull} />;
     case 'SearchBar':
       result = <SearchBar />;
       break;

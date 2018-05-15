@@ -169,3 +169,24 @@ body {
     font-size: 10px;
     font-family: "Avenir Medium";
     margin: 0; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+.heading {
+  padding: 10px 10px 5px 10px; }
+  .heading1 {
+    font-size: 40px; }
+  .heading2 {
+    font-size: 30px; }
+  .heading3 {
+    font-size: 24px; }
