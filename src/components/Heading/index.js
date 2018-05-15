@@ -2,13 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Heading = props => (
-  <div class="heading">
-    dog
+  <div className={`heading heading${props.headingLevel}`}>
+    {props.content}
   </div>
 );
 
 Heading.propTypes = {
-  color: PropTypes.string.isRequired,
   headingLevel: PropTypes.number.isRequired,
   content: PropTypes.string.isRequired,
 };

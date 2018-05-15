@@ -1,0 +1,13 @@
+@import "../../config/styles";
+
+.heading {
+    &1{
+        font-size: 40px;
+    }
+    &2{
+        font-size: 30px;
+    }
+    &3{
+        font-size: 24px;
+    }
+}
