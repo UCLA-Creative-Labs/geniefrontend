@@ -50,7 +50,18 @@ body {
     outline: 0;
     background-color: #ffd69e; }
 
-<<<<<<< HEAD
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
 .search {
   margin: 5px;
   border-width: 1px;
@@ -58,20 +69,18 @@ body {
   border-style: solid;
   border-radius: 10px;
   display: inline-block; }
+  .search .glass {
+    max-height: 24px;
+    padding-left: 15px;
+    padding-right: 20px; }
+  .search .search-text {
+    color: black;
+    font-size: 24px;
+    height: 50px;
+    width: 700px;
+    border-width: 0px;
+    margin-right: 10px; }
 
-.glass {
-  max-height: 24px;
-  padding-left: 15px;
-  padding-right: 20px; }
-
-.search-text {
-  color: black;
-  font-size: 24px;
-  height: 50px;
-  width: 700px;
-  border-width: 0px;
-  margin-right: 10px; }
-=======
 @font-face {
   font-family: 'Avenir Black';
   src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
@@ -160,4 +169,3 @@ body {
     font-size: 10px;
     font-family: "Avenir Medium";
     margin: 0; }
->>>>>>> 008a827e663d697a6228dc460ad8a31d72b280de
