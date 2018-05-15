@@ -10,6 +10,8 @@ const COMPONENTS = [
   'Button',
   'Image',
   'h1',
+  'h2',
+  'h3',
   'Paragraph',
   'InlineStepper',
 ];
