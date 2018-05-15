@@ -1,7 +1,23 @@
+@font-face {
+    font-family: 'Avenir Black';
+    src: url('../assets/fonts/avenir/AvenirLTStd-Black.woff2') format('woff2'),
+        url('../assets/fonts/avenir/AvenirLTStd-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Avenir Medium';
+    src: url('../assets/fonts/avenir/AvenirLTStd-Medium.woff2') format('woff2'),
+        url('../assets/fonts/avenir/AvenirLTStd-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
 $primary: #ff7575;
 $secondary: #ffd69e;
-$font-family:  "Avenir Black";
-
+$font-primary-black:  "Avenir Black";
+$font-primary-medium: "Avenir Medium";
 
 @mixin hover-state {
     &:hover, &:active, &:focus {
