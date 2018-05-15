@@ -2,14 +2,21 @@ import React from 'react';
 
 import Button from '../components/Button';
 import Heading from '../components/Heading';
+import Image from '../components/Image';
+import InlineStepper from '../components/InlineStepper';
+import Paragraph from '../components/Paragraph';
 
 const COMPONENTS = [
   'Button',
-  'Card',
+  'Image',
   'h1',
+  'Paragraph',
+  'InlineStepper',
 ];
 
 const onClickNull = () => {};
+
+const pgText = 'Lorem ipsum dolor sit amet, vis populo laoreet indoctum ne, per ad minim feugiat omittam, quas habeo numquam ad eam. Eu invidunt expetenda usu. No tollit utamur adolescens vel. No vocibus placerat sapientem mei, ei vix nemore accusata patrioque. Impetus concludaturque cu qui, veri prima qui ut, causae scripserit ne pro.';
 
 export const getElement = (s, i) => {
   let result;
@@ -17,8 +24,14 @@ export const getElement = (s, i) => {
     case 'Button':
       result = <Button key={i} label="button" color="primary" onClick={onClickNull} />;
       break;
-    case 'Card':
-      result = <Button key={i} label="card" color="primary" onClick={onClickNull} />;
+    case 'InlineStepper':
+      result = <InlineStepper key={i} label="inline stepper" />;
+      break;
+    case 'Image':
+      result = <Image key={i} />;
+      break;
+    case 'Paragraph':
+      result = <Paragraph key={i} text={pgText} />;
       break;
     case 'h1':
       result = <Heading key={i} headingLevel={1} content="Heading 1" label="header" color="primary" onClick={onClickNull} />;

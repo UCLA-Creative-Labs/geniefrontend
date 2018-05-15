@@ -36,7 +36,6 @@ body {
   font-weight: 600;
   padding: 0 20px 0 20px;
   cursor: pointer;
-  margin-bottom: 10px;
   font-family: "Avenir Black";
   -webkit-transition: all 0.75s ease;
   -moz-transition: all 0.75s ease;
@@ -50,3 +49,92 @@ body {
   .btn:hover, .btn:active, .btn:focus {
     outline: 0;
     background-color: #ffd69e; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+.card {
+  box-shadow: 0px 0px 35px rgba(2, 2, 2, 0.18);
+  background: #FFFFFF;
+  width: fit-content; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+.stepper {
+  display: flex;
+  width: 200px;
+  justify-content: space-between;
+  padding: 5px 10px 5px 10px;
+  align-items: center; }
+  .stepper h1 {
+    font-family: "Avenir Black";
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0; }
+  .stepper .step-container {
+    display: flex; }
+    .stepper .step-container .button-container {
+      width: 22px;
+      height: 22px;
+      display: flex;
+      align-items: center;
+      margin-left: 10px; }
+      .stepper .step-container .button-container img {
+        width: 100%; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+.img-container {
+  width: 220px; }
+  .img-container img {
+    width: 100%;
+    display: block; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+.pg-container {
+  width: 200px;
+  padding: 10px 10px 5px 10px; }
+  .pg-container .pg {
+    font-size: 10px;
+    font-family: "Avenir Medium";
+    margin: 0; }
