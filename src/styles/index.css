@@ -62,6 +62,37 @@ body {
   font-weight: 500;
   font-style: normal; }
 
+.search {
+  margin: 5px;
+  border-width: 1px;
+  border-color: black;
+  border-style: solid;
+  border-radius: 10px;
+  display: inline-block; }
+  .search .glass {
+    max-height: 24px;
+    padding-left: 15px;
+    padding-right: 20px; }
+  .search .search-text {
+    color: black;
+    font-size: 24px;
+    height: 50px;
+    width: 700px;
+    border-width: 0px;
+    margin-right: 10px; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
 .card {
   box-shadow: 0px 0px 35px rgba(2, 2, 2, 0.18);
   background: #FFFFFF;

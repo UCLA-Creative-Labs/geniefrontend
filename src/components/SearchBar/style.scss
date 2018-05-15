@@ -1,0 +1,23 @@
+@import "../../config/styles";
+
+.search {
+    margin: 5px;
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    display: inline-block;
+    .glass {
+        max-height: 24px;
+        padding-left: 15px;
+        padding-right: 20px;
+    }
+    .search-text {
+        color: black;
+        font-size: 24px;
+        height: 50px;
+        width: 700px;
+        border-width: 0px;
+        margin-right: 10px;
+    }
+}

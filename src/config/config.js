@@ -5,6 +5,7 @@ import Heading from '../components/Heading';
 import Image from '../components/Image';
 import InlineStepper from '../components/InlineStepper';
 import Paragraph from '../components/Paragraph';
+import SearchBar from '../components/SearchBar';
 
 const COMPONENTS = [
   'Button',
@@ -12,6 +13,7 @@ const COMPONENTS = [
   'h1',
   'h2',
   'h3',
+  'SearchBar',
   'Paragraph',
   'InlineStepper',
 ];
@@ -43,6 +45,8 @@ export const getElement = (s, i) => {
       break;
     case 'h3':
       result = <Heading key={i} headingLevel={3} content="Heading 3" label="header" color="primary" onClick={onClickNull} />;
+    case 'SearchBar':
+      result = <SearchBar />;
       break;
     default:
       result = <Button key={i} label="default" color="primary" onClick={onClickNull} />;
