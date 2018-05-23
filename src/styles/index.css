@@ -106,7 +106,7 @@ body {
 .card {
   box-shadow: 0px 0px 35px rgba(2, 2, 2, 0.18);
   background: #FFFFFF;
-  width: fit-content; }
+  width: 220px; }
 
 @font-face {
   font-family: 'Avenir Black';
