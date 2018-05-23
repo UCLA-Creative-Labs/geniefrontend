@@ -15,17 +15,19 @@
     height: 30px;
 
     .glass {
-      max-height: 18px;
+      max-height: 13px;
       padding-left: 15px;
       padding-right: 20px;
       flex: 1;
     }
+
     .search-text {
       color: black;
       border-width: 0px;
       font-size: 13px;
       font-family: $font-primary-medium;
       flex: 10;
+      transform: translate(0, 8%);
 
       &:focus {
         outline: 0;
