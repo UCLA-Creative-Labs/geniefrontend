@@ -62,24 +62,33 @@ body {
   font-weight: 500;
   font-style: normal; }
 
-.search {
-  margin: 5px;
-  border-width: 1px;
-  border-color: black;
-  border-style: solid;
-  border-radius: 10px;
-  display: inline-block; }
-  .search .glass {
-    max-height: 24px;
-    padding-left: 15px;
-    padding-right: 20px; }
-  .search .search-text {
-    color: black;
-    font-size: 24px;
-    height: 50px;
-    width: 700px;
-    border-width: 0px;
-    margin-right: 10px; }
+.search-container {
+  padding: 5px 10px 5px 10px;
+  width: 200px; }
+  .search-container .search {
+    border-width: 1px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px; }
+    .search-container .search .glass {
+      max-height: 18px;
+      padding-left: 15px;
+      padding-right: 20px;
+      flex: 1; }
+    .search-container .search .search-text {
+      color: black;
+      border-width: 0px;
+      font-size: 13px;
+      font-family: "Avenir Medium";
+      flex: 10; }
+      .search-container .search .search-text:focus {
+        outline: 0; }
+    .search-container .search .buffer {
+      flex: 2; }
 
 @font-face {
   font-family: 'Avenir Black';
@@ -183,7 +192,11 @@ body {
   font-style: normal; }
 
 .heading {
-  padding: 10px 10px 5px 10px; }
+  padding: 8px 10px 8px 10px;
+  width: 200px;
+  height: auto; }
+  .heading h1, .heading h2, .heading h3 {
+    margin: 0; }
   .heading1 {
     font-size: 40px; }
   .heading2 {

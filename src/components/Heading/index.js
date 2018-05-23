@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Heading = props => (
   <div className={`heading heading${props.headingLevel}`}>
-    {props.content}
+    <h1 className={`heading${props.headingLevel}`}>{props.content}</h1>
   </div>
 );
 
