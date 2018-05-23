@@ -1,18 +1,26 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Button = props => (
-  <div>
-    <button className={`btn btn-${props.color}`} onClick={props.onClick}>
-      <span>{props.label}</span>
-    </button>
-  </div>
-);
+const Button = (props) => {
+  const buttonClasses = [];
 
-Button.propTypes = {
-  color: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  label: PropTypes.string.isRequired,
+  if (props.rounded) {
+    buttonClasses.push('rounded');
+  }
+  if (props.ghost) {
+    buttonClasses.push('ghost');
+  }
+  if (props.large) {
+    buttonClasses.push('large');
+  }
+
+  return (
+    <div>
+      <button className={`btn btn-${props.color} ${buttonClasses.join(' ')}`} onClick={props.onClick}>
+        <span>{props.label}</span>
+        {props.secondaryLabel && <span className="light">{props.secondaryLabel}</span>}
+      </button>
+    </div>
+  );
 };
 
 export default Button;

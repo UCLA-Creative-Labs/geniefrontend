@@ -2,21 +2,34 @@
 
 .btn {
 	color: white;
-	height: 40px;
+	height: 2rem;
 	border-width: 0;
-	text-transform: lowercase;
 	font-size: 12px;
 	font-weight: 600;
 	padding: 0 20px 0 20px;
 	cursor: pointer;
-	font-family: $font-primary-black;
+	font-family: $font-primary-medium;
 
 	&-primary {
-		background-color: $primary; 
+		background-color: $primary;
+		border: .1rem solid $primary;
 	}
 
 	&-secondary {
-		background-color: $secondary; 
+		background-color: $secondary;
+		border: .1rem solid $primary;
+	}
+
+	&.rounded {
+		border-radius: 20px;
+		background: none;
+		color: $primary;
+	}
+
+	&.large {
+		font-size: 1.2rem;
+		height: 3.2rem;
+		border-radius: 1.6rem;
 	}
 
 	@include hover-state {
@@ -24,5 +37,9 @@
 		background-color: $secondary;
 	}
 
-	@include transition (all, .75s, ease)
+	@include transition (all, .75s, ease);
+
+	.light {
+		font-family: $font-primary-light;
+	}
 }
