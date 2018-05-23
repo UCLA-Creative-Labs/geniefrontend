@@ -45,8 +45,9 @@ export const getElement = (s, i) => {
       break;
     case 'h3':
       result = <Heading key={i} headingLevel={3} content="Heading 3" label="header" color="primary" onClick={onClickNull} />;
+      break;
     case 'SearchBar':
-      result = <SearchBar />;
+      result = <SearchBar key={i} />;
       break;
     default:
       result = <Button key={i} label="default" color="primary" onClick={onClickNull} />;
