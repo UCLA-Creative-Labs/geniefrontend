@@ -1,26 +1,35 @@
 import React from 'react';
 
-import COMPONENTS, { getElement } from '../config/config';
+import { getElement } from '../config/config';
 import Card from '../components/Card';
+import Button from '../components/Button';
+import { getDisplay } from '../api/api.js';
 
 class Display extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       components: [],
+      err: false,
     };
 
     this.setComponents = this.setComponents.bind(this);
   }
 
   componentDidMount() {
-    this.setComponents();
   }
 
   async setComponents() {
-    this.setState({
-      components: COMPONENTS,
-    });
+    const json = await getDisplay();
+    if(json.err){
+      this.setState({
+        err: json.err,
+      })
+    } else{
+      this.setState({
+        components: json.components,
+      })
+    }
   }
 
   render() {
@@ -38,6 +47,7 @@ class Display extends React.Component {
             getElement(component, index)
           ))}
         </Card>
+        <Button onClick={this.setComponents} color="primary" label="Get Display" />
       </div>
     );
   }
