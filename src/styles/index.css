@@ -18,9 +18,14 @@
 
 body {
   margin: 0;
-  padding: 5rem;
   font-family: "Avenir Black";
   background-color: #FCFCFF; }
+
+.page-container {
+  padding: 5rem; }
+  .page-container .page {
+    height: 75vh;
+    width: 100%; }
 
 @font-face {
   font-family: 'Avenir Black';
@@ -49,6 +54,7 @@ body {
   padding: 0 20px 0 20px;
   cursor: pointer;
   font-family: "Avenir Medium";
+  margin: .2rem;
   -webkit-transition: all 0.75s ease;
   -moz-transition: all 0.75s ease;
   -ms-transition: all 0.75s ease;
@@ -59,18 +65,22 @@ body {
     border: 0.1rem solid #7B53EB; }
   .btn-secondary {
     background-color: #E5DAF0;
-    border: 0.1rem solid #7B53EB; }
+    border: 0.1rem solid #E5DAF0; }
   .btn.rounded {
-    border-radius: 20px;
-    background: none;
-    color: #7B53EB; }
+    border-radius: 20px; }
   .btn.large {
     font-size: 1.2rem;
     height: 3.2rem;
     border-radius: 1.6rem; }
-  .btn:hover, .btn:active, .btn:focus {
-    outline: 0;
-    background-color: #E5DAF0; }
+  .btn.ghost {
+    background: none;
+    color: #7B53EB; }
+    .btn.ghost:hover, .btn.ghost:active, .btn.ghost:focus {
+      outline: 0;
+      background-color: #FCFCFF;
+      -webkit-box-shadow: 1px 2px 4px #7B53EB;
+      -moz-box-shadow: 1px 2px 4px #7B53EB;
+      box-shadow: 1px 2px 4px #7B53EB; }
   .btn .light {
     font-family: "Avenir Light"; }
 
@@ -283,7 +293,7 @@ body {
   font-weight: 300;
   font-style: normal; }
 
-.landing {
+.landing, .info {
   height: 75vh;
   width: 100%;
   display: flex;
@@ -292,22 +302,79 @@ body {
   background-color: #FCFCFF;
   flex-direction: column;
   overflow: hidden; }
-  .landing .text-container {
+  .landing .text-container, .info .text-container {
     overflow-y: hidden; }
-    .landing .text-container h1 {
+    .landing .text-container h1, .info .text-container h1 {
       font-family: "Avenir Black";
       color: #020202;
       margin: 1rem 0rem 1rem 0rem;
       font-size: 3.5rem; }
-    .landing .text-container p {
+    .landing .text-container p, .info .text-container p {
       font-family: "Avenir Medium";
       color: #6B6776;
       font-size: 1.3rem;
       letter-spacing: .02rem; }
-  .landing .splash-container {
+  .landing .splash-container, .info .splash-container {
     max-width: 70%;
     height: 80%;
     position: absolute;
     align-self: flex-end; }
-    .landing .splash-container img {
+    .landing .splash-container img, .info .splash-container img {
       max-height: 100%; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Light';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Light.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
+.info {
+  display: flex;
+  flex-direction: row; }
+  .info .text-container {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column; }
+    .info .text-container h1 {
+      font-size: 2.8rem;
+      flex: 1; }
+    .info .text-container .info-container {
+      flex: 15;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      .info .text-container .info-container img {
+        max-width: 2rem;
+        max-height: 2rem;
+        flex: 1;
+        margin: 0 2rem 0 0; }
+      .info .text-container .info-container .info-text {
+        flex: 8;
+        display: flex;
+        flex-direction: column; }
+        .info .text-container .info-container .info-text h2 {
+          flex: 1;
+          font-family: "Avenir Medium";
+          margin: .2rem 0 .2rem 0; }
+        .info .text-container .info-container .info-text p {
+          flex: 2;
+          margin: .2rem 0 .2rem 0;
+          font-size: 1rem; }
+    .info .text-container Button {
+      margin: 1rem 0 0 0; }
+  .info .example-container {
+    flex: 1; }

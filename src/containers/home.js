@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Landing from './landing';
+import Info from './info';
 
 class Home extends React.Component {
   constructor(props) {
@@ -12,6 +13,7 @@ class Home extends React.Component {
     return (
       <div>
         <Landing />
+        <Info />
       </div>
     );
   }

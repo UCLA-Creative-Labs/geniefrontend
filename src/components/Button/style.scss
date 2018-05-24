@@ -9,6 +9,7 @@
 	padding: 0 20px 0 20px;
 	cursor: pointer;
 	font-family: $font-primary-medium;
+	margin: .2rem;
 
 	&-primary {
 		background-color: $primary;
@@ -17,13 +18,11 @@
 
 	&-secondary {
 		background-color: $secondary;
-		border: .1rem solid $primary;
+		border: .1rem solid $secondary;
 	}
 
 	&.rounded {
 		border-radius: 20px;
-		background: none;
-		color: $primary;
 	}
 
 	&.large {
@@ -32,9 +31,16 @@
 		border-radius: 1.6rem;
 	}
 
-	@include hover-state {
-		outline: 0;
-		background-color: $secondary;
+	&.ghost {
+		background: none;
+		color: $primary;
+
+		@include hover-state {
+			outline: 0;
+			background-color: $background-color;
+
+			@include box-shadow(1px, 2px, 4px, $primary);
+		}
 	}
 
 	@include transition (all, .75s, ease);
