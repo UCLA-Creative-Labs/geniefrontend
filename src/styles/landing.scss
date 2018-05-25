@@ -1,0 +1,41 @@
+@import "../config/styles";
+
+.landing {
+  height: 75vh;
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: $background-color;
+  flex-direction: column;
+  overflow: hidden;
+
+  .text-container {
+    overflow-y: hidden;
+
+    h1 {
+      font-family: $font-primary-black;
+      color: $font-color-primary;
+      margin: 1rem 0rem 1rem 0rem;
+      font-size: 3.5rem;
+    }
+
+    p {
+      font-family: $font-primary-medium;
+      color: $font-color-secondary;
+      font-size: 1.3rem;
+      letter-spacing: .02rem;
+    }
+  }
+
+  .splash-container {
+    max-width: 70%;
+    height: 80%;
+    position: absolute;
+    align-self: flex-end;
+
+    img {
+      max-height: 100%;
+    }
+  }
+}

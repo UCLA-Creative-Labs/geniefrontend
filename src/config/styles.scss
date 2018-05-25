@@ -14,10 +14,22 @@
     font-style: normal;
 }
 
-$primary: #ff7575;
-$secondary: #ffd69e;
+@font-face {
+    font-family: 'Avenir Light';
+    src: url('../assets/fonts/avenir/AvenirLTStd-Light.woff2') format('woff2'),
+        url('../assets/fonts/avenir/AvenirLTStd-Light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal;
+}
+
+$primary: #7B53EB;
+$secondary: #E5DAF0;
 $font-primary-black:  "Avenir Black";
 $font-primary-medium: "Avenir Medium";
+$font-primary-light: "Avenir Light";
+$font-color-primary: #020202;
+$font-color-secondary: #6B6776;
+$background-color: #FCFCFF;
 
 @mixin hover-state {
     &:hover, &:active, &:focus {
@@ -32,3 +44,15 @@ $font-primary-medium: "Avenir Medium";
     -o-transition:      $what $time $how;
     transition:         $what $time $how;
 }
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+      -webkit-box-shadow:inset $top $left $blur $color;
+      -moz-box-shadow:inset $top $left $blur $color;
+      box-shadow:inset $top $left $blur $color;
+    } @else {
+      -webkit-box-shadow: $top $left $blur $color;
+      -moz-box-shadow: $top $left $blur $color;
+      box-shadow: $top $left $blur $color;
+    }
+  }

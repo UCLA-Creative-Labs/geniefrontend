@@ -26,7 +26,7 @@ export const getElement = (s, i) => {
   let result;
   switch (s) {
     case 'Button':
-      result = <Button key={i} label="button" color="primary" onClick={onClickNull} />;
+      result = <Button key={i} rounded large label="button" color="primary" onClick={onClickNull} />;
       break;
     case 'InlineStepper':
       result = <InlineStepper key={i} label="inline stepper" />;
