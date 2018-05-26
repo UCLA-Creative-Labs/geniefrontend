@@ -1,5 +1,5 @@
 import React from 'react';
-
+import NavBar from '../components/NavBar';
 
 class Home extends React.Component {
   constructor(props) {
@@ -10,6 +10,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
+        <NavBar links={['Display', 'Home']} />
         <h1>home</h1>
       </div>
     );

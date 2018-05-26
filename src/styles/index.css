@@ -204,3 +204,55 @@ body {
     font-size: 30px; }
   .heading3 {
     font-size: 24px; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+.nav-container {
+  padding: 50px 50px 50px 50px;
+  font-family: "Avenir Black";
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-between; }
+  .nav-container .left {
+    display: flex;
+    flex-direction: row; }
+  .nav-container .genie {
+    max-height: 123px;
+    max-width: 123px;
+    margin-left: 50px;
+    margin-right: 50px;
+    flex: 1; }
+  .nav-container .genie-text {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 50px;
+    width: 100px; }
+  .nav-container .link-container {
+    margin: auto;
+    flex: display;
+    flex-direction: row; }
+    .nav-container .link-container .links {
+      padding-left: 10px;
+      align-self: center; }
+    .nav-container .link-container .link-text {
+      color: black;
+      border-width: 0px;
+      font-size: 13px;
+      font-family: "Avenir Medium";
+      flex: 10;
+      transform: translate(0, 8%); }
+      .nav-container .link-container .link-text:focus {
+        outline: 0; }
+  .nav-container .buffer {
+    flex: 2; }

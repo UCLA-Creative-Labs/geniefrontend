@@ -1,0 +1,60 @@
+@import "../../config/styles";
+
+.nav-container {
+  padding: 50px 50px 50px 50px;
+  font-family: $font-primary-black;
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  justify-content: space-between;
+
+  .left {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .genie {
+    max-height: 123px;
+    max-width: 123px;
+    margin-left: 50px;
+    margin-right: 50px;
+    flex: 1;
+  }
+
+  .genie-text {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    height: 50px;
+    width: 100px;
+  }
+
+  .link-container {
+    margin: auto;
+    flex: display;
+    flex-direction: row;
+
+    .links {
+      padding-left: 10px;
+      align-self: center;
+    }
+  
+    .link-text {
+      color: black;
+      border-width: 0px;
+      font-size: 13px;
+      font-family: $font-primary-medium;
+      flex: 10;
+      transform: translate(0, 8%);
+  
+      &:focus {
+        outline: 0;
+      }
+    }
+  }
+
+
+
+  .buffer {
+    flex: 2;
+  }
+}
