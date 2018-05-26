@@ -1,5 +1,7 @@
 import React from 'react';
 import NavBar from '../components/NavBar';
+import Landing from './landing';
+import Info from './info';
 
 class Home extends React.Component {
   constructor(props) {
@@ -11,7 +13,8 @@ class Home extends React.Component {
     return (
       <div>
         <NavBar links={['Display', 'Home']} />
-        <h1>home</h1>
+        <Landing />
+        <Info />
       </div>
     );
   }
