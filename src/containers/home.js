@@ -12,7 +12,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
-        <NavBar links={['Display', 'Home']} />
+        <NavBar links={['about', 'instructions', 'display']} />
         <Landing />
         <Info />
       </div>

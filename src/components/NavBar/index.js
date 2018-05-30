@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom';
 
 import genie from '../../assets/images/genie.png';
 import genietext from '../../assets/images/genie-text.png';
-import Heading from '../Heading';
 import Button from '../Button';
 
 const NavBar = props => (
@@ -14,13 +13,11 @@ const NavBar = props => (
     </div>
 
     <div className="link-container">
-      <div className="links">
-        {props.links.map((link) =>
-          <Route render={({ history }) => (
-            <Button type='button' color="primary" label={`${link}`} onClick={() => { history.push(`/${link}`) }} />
-          )} />
-        )}
-      </div>
+      {props.links.map((link, index) =>
+        <Route key={index} render={({ history }) => (
+          <Button type='button' color="primary" ghost rounded label={`${link}`} onClick={() => { history.push(`/${link}`) }} />
+        )} />
+      )}
     </div>
   </div>
 );

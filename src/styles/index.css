@@ -287,34 +287,35 @@ body {
   font-weight: 500;
   font-style: normal; }
 
+@font-face {
+  font-family: 'Avenir Light';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Light.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
 .nav-container {
   padding: 50px 50px 50px 50px;
   font-family: "Avenir Black";
   display: flex;
-  flex-direction: row;
-  width: 100vw;
   justify-content: space-between; }
   .nav-container .left {
     display: flex;
-    flex-direction: row; }
-  .nav-container .genie {
-    max-height: 123px;
-    max-width: 123px;
-    margin-left: 50px;
-    margin-right: 50px;
-    flex: 1; }
-  .nav-container .genie-text {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    height: 50px;
-    width: 100px; }
+    flex-direction: row;
+    align-items: center; }
+    .nav-container .left .genie {
+      margin-right: 10px; }
+    .nav-container .left .genie-text {
+      margin-left: 10px;
+      max-width: 97px;
+      max-height: 37px; }
   .nav-container .link-container {
-    margin: auto;
-    flex: display;
-    flex-direction: row; }
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100vw;
+    margin-right: 45px; }
     .nav-container .link-container .links {
-      padding-left: 10px;
-      align-self: center; }
+      padding-left: 10px; }
     .nav-container .link-container .link-text {
       color: black;
       border-width: 0px;
@@ -326,6 +327,19 @@ body {
         outline: 0; }
   .nav-container .buffer {
     flex: 2; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
 @font-face {
   font-family: 'Avenir Light';
   src: url("../assets/fonts/avenir/AvenirLTStd-Light.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Light.woff") format("woff");
