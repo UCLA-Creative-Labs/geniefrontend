@@ -303,6 +303,59 @@ body {
   font-weight: 300;
   font-style: normal; }
 
+.nav-container {
+  padding: 50px 50px 50px 50px;
+  font-family: "Avenir Black";
+  display: flex;
+  justify-content: space-between; }
+  .nav-container .left {
+    display: flex;
+    flex-direction: row;
+    align-items: center; }
+    .nav-container .left .genie {
+      margin-right: 10px; }
+    .nav-container .left .genie-text {
+      margin-left: 10px;
+      max-width: 97px;
+      max-height: 37px; }
+  .nav-container .link-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    max-width: 100vw;
+    margin-right: 45px; }
+    .nav-container .link-container .links {
+      padding-left: 10px; }
+    .nav-container .link-container .link-text {
+      color: black;
+      border-width: 0px;
+      font-size: 13px;
+      font-family: "Avenir Medium";
+      flex: 10;
+      transform: translate(0, 8%); }
+      .nav-container .link-container .link-text:focus {
+        outline: 0; }
+  .nav-container .buffer {
+    flex: 2; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Light';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Light.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
 .landing, .info {
   height: 75vh;
   width: 100%;

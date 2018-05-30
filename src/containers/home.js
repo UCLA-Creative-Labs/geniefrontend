@@ -1,5 +1,5 @@
 import React from 'react';
-
+import NavBar from '../components/NavBar';
 import Landing from './landing';
 import Info from './info';
 
@@ -12,6 +12,7 @@ class Home extends React.Component {
   render() {
     return (
       <div>
+        <NavBar links={['about', 'instructions', 'display']} />
         <Landing />
         <Info />
       </div>
