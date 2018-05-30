@@ -3,7 +3,7 @@
 .btn {
 	color: white;
 	height: 2rem;
-	border-width: 0;
+	border-radius: 2px;
 	font-size: 12px;
 	padding: 0 20px 0 20px;
 	cursor: pointer;
@@ -40,6 +40,10 @@
 
 			@include box-shadow(1px, 2px, 4px, $primary);
 		}
+	}
+
+	@include hover-state {
+		outline: 0;
 	}
 
 	@include transition (all, .75s, ease);

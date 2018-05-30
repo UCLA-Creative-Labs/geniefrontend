@@ -65,7 +65,7 @@ body {
 .btn {
   color: white;
   height: 2rem;
-  border-width: 0;
+  border-radius: 2px;
   font-size: 12px;
   padding: 0 20px 0 20px;
   cursor: pointer;
@@ -97,6 +97,8 @@ body {
       -webkit-box-shadow: 1px 2px 4px #8865EA;
       -moz-box-shadow: 1px 2px 4px #8865EA;
       box-shadow: 1px 2px 4px #8865EA; }
+  .btn:hover, .btn:active, .btn:focus {
+    outline: 0; }
   .btn .light {
     font-family: "Avenir Light"; }
 
@@ -178,7 +180,10 @@ body {
 .card {
   box-shadow: 0px 0px 35px rgba(2, 2, 2, 0.18);
   background: #FFFFFF;
-  width: 400px; }
+  width: 400px;
+  margin: 15px;
+  height: auto;
+  overflow: visible; }
   .card-small {
     width: 300px; }
   .card-medium {
@@ -360,8 +365,45 @@ body {
   font-weight: normal;
   font-style: normal; }
 
+.buttonBar {
+  width: calc(100%-2*$padding-lr);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px 0 20px;
+  margin: 8px 0 8px 0; }
+  .buttonBar h3 {
+    font-family: "Avenir Light";
+    color: #5D5869;
+    font-size: 17px; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Light';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Light.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Charter';
+  src: url("../assets/fonts/charter/Charter.woff2") format("woff2"), url("../assets/fonts/charter/Charter.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 .landing, .info {
-  height: 75vh;
+  min-height: 75vh;
+  height: auto;
   width: 100%;
   display: flex;
   align-content: center;
@@ -415,10 +457,11 @@ body {
 
 .info {
   display: flex;
-  flex-direction: row; }
+  flex-direction: row;
+  justify-content: space-between; }
   .info .text-container {
     flex: 1;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column; }
     .info .text-container h1 {
@@ -450,4 +493,5 @@ body {
     .info .text-container Button {
       margin: 1rem 0 0 0; }
   .info .example-container {
-    flex: 1; }
+    flex: 1;
+    height: fit-content; }

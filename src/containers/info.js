@@ -2,6 +2,7 @@ import React from 'react';
 import { withRouter } from 'react-router-dom';
 
 import Button from '../components/Button';
+import ButtonBar from '../components/ButtonBar';
 import Image from '../components/Image';
 import Heading from '../components/Heading';
 import Card from '../components/Card';
@@ -22,6 +23,8 @@ class Info extends React.Component {
     const onClickNavigate = (path) => {
       this.props.history.push(path);
     };
+    
+    const onClickNull = () => {};
 
     return (
       <div className="page-container">
@@ -57,6 +60,7 @@ class Info extends React.Component {
               <Image />
               <Heading content="Learn" headingLevel={3}/>
               <Paragraph />
+              <ButtonBar label="title" buttonLabel="clicky" buttonColor="primary" onClick={onClickNull} />
             </Card>
           </div>
         </div>
