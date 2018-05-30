@@ -14,6 +14,12 @@ body {
   }
 }
 
+.flex-center-inside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 @import '../components/Button/style.scss';
 @import '../components/SearchBar/style.scss';
 @import '../components/Card/style.scss';

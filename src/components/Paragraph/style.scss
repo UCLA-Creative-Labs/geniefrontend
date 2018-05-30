@@ -1,12 +1,13 @@
 @import '../../config/styles';
 
 .pg-container {
-  width: 200px;
-  padding: 10px 10px 5px 10px;
+  width: calc(100% - 2*$padding-lr);
+  padding: 15px $padding-lr 10px $padding-lr;
 
   .pg {
-    font-size: 10px;
+    font-size: 16px;
     font-family: $font-primary-medium;
+    color: $font-color-secondary;
     margin: 0;
   }
 }

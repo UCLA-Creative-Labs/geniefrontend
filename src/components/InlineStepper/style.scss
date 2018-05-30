@@ -2,14 +2,15 @@
 
 .stepper {
   display: flex;
-  width: 200px;
+  width: calc(100% - 2*$padding-lr);
   justify-content: space-between;
-  padding: 8px 10px 8px 10px;
+  padding: 8px $padding-lr 8px $padding-lr;
+  height: 30px;
   align-items: center;
 
   h1 {
     font-family: $font-primary-black;
-    font-size: 13px;
+    font-size: 17px;
     font-weight: 600;
     margin: 0;
   }
