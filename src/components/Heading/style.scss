@@ -1,8 +1,10 @@
 @import "../../config/styles";
 
 .heading {
-    padding: 8px 10px 8px 10px;
-    width: 200px;
+    @extend .flex-center-inside;
+
+    padding: 15px $padding-lr 15px $padding-lr;
+    width: calc(100% - 2*$padding-lr);
     height: auto;
 
     h1,h2,h3 {

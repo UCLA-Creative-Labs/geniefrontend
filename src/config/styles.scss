@@ -22,7 +22,7 @@
     font-style: normal;
 }
 
-$primary: #7B53EB;
+$primary: #8865EA;
 $secondary: #E5DAF0;
 $font-primary-black:  "Avenir Black";
 $font-primary-medium: "Avenir Medium";
@@ -30,6 +30,8 @@ $font-primary-light: "Avenir Light";
 $font-color-primary: #020202;
 $font-color-secondary: #6B6776;
 $background-color: #FCFCFF;
+
+$padding-lr: 15px;
 
 @mixin hover-state {
     &:hover, &:active, &:focus {
