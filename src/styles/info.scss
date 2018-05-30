@@ -4,10 +4,11 @@
   @extend .landing;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 
   .text-container {
     flex: 1;
-    height: 100%;
+    min-height: 100%;
     display: flex;
     flex-direction: column;
 
@@ -56,6 +57,7 @@
 
   .example-container {
     flex: 1;
+    height: fit-content;
 
     @extend .flex-center-inside;
   }

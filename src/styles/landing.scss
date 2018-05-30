@@ -1,7 +1,8 @@
 @import "../config/styles";
 
 .landing {
-  height: 75vh;
+  min-height: 75vh;
+  height: auto;
   width: 100%;
   display: flex;
   align-content: center;

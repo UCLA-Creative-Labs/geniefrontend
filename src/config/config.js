@@ -20,7 +20,7 @@ const COMPONENTS = [
 
 const onClickNull = () => {};
 
-const pgText = 'Lorem ipsum dolor sit amet, vis populo laoreet indoctum ne, per ad minim feugiat omittam, quas habeo numquam ad eam. Eu invidunt expetenda usu. No tollit utamur adolescens vel.';
+const pgText = 'Lorem ipsum dolor sit amet, vis populo laoreet indoctum ne, per ad minim feugiat omittam, quas habeo numquam ad eam.';
 
 export const getElement = (s, i) => {
   let result;
