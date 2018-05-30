@@ -55,6 +55,7 @@ class Info extends React.Component {
             <Card size="small">
               <Heading center content="genie" headingLevel={2} />
               <Image />
+              <Heading content="Learn" headingLevel={3}/>
               <Paragraph />
             </Card>
           </div>
