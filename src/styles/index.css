@@ -275,6 +275,12 @@ body {
   .heading3 {
     font-size: 24px; }
 
+.box__dragndrop,
+.box__uploading,
+.box__success,
+.box__error {
+  display: none; }
+
 @font-face {
   font-family: 'Avenir Black';
   src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
@@ -378,3 +384,7 @@ body {
       margin: 1rem 0 0 0; }
   .info .example-container {
     flex: 1; }
+
+.upload-container {
+  margin: auto;
+  text-align: center; }
