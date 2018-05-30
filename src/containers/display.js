@@ -1,14 +1,15 @@
 import React from 'react';
 
-import { getElement } from '../config/config';
+import COMPONENTS, { getElement } from '../config/config';
 import Card from '../components/Card';
 import Button from '../components/Button';
-import { getDisplay } from '../api/api.js';
+import { getDisplay } from '../api/api';
 
 class Display extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      testcomponents: [],
       components: [],
       err: false,
     };
@@ -17,18 +18,25 @@ class Display extends React.Component {
   }
 
   componentDidMount() {
+    this.getComponents();
+  }
+
+  async getComponents() {
+    this.setState({
+      testcomponents: COMPONENTS,
+    });
   }
 
   async setComponents() {
     const json = await getDisplay();
-    if(json.err){
+    if (json.err) {
       this.setState({
         err: json.err,
-      })
-    } else{
+      });
+    } else {
       this.setState({
         components: json.components,
-      })
+      });
     }
   }
 
@@ -42,8 +50,8 @@ class Display extends React.Component {
 
     return (
       <div className="display" style={displayStyle}>
-        <Card>
-          {this.state.components.map((component, index) => (
+        <Card size="medium" >
+          {this.state.testcomponents.map((component, index) => (
             getElement(component, index)
           ))}
         </Card>

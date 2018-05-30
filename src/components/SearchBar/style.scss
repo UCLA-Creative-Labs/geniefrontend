@@ -1,21 +1,19 @@
 @import "../../config/styles";
 
 .search-container {
-  padding: 5px 10px 5px 10px;
-  width: 200px;
+  padding: 5px $padding-lr 5px ;
+  width: calc(100% - 2*$padding-lr);
 
   .search {
-    border-width: 1px;
-    border-color: black;
-    border-style: solid;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30px;
+    height: 40px;
 
     .glass {
       max-height: 13px;
+      max-width: 13px;
       padding-left: 15px;
       padding-right: 20px;
       flex: 1;

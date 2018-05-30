@@ -1,6 +1,12 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import Button from '../components/Button';
+import Image from '../components/Image';
+import Heading from '../components/Heading';
+import Card from '../components/Card';
+import Paragraph from '../components/Paragraph';
+
 import cloud from '../assets/images/cloud.png';
 import devices from '../assets/images/devices.png';
 import doc from '../assets/images/doc.png';
@@ -13,8 +19,9 @@ class Info extends React.Component {
   }
 
   render() {
-
-    const onClickNull = () => {};
+    const onClickNavigate = (path) => {
+      this.props.history.push(path);
+    };
 
     return (
       <div className="page-container">
@@ -42,10 +49,14 @@ class Info extends React.Component {
                 <p>Watch as our reactive service brings your ideas to life!</p>
               </div>
             </div>
-            <Button rounded large label="Start Designing" color="primary" onClick={onClickNull} />
+            <Button rounded large label="Start Designing" color="primary" onClick={() => onClickNavigate('display')} />
           </div>
           <div className="example-container">
-          
+            <Card size="small">
+              <Heading center content="genie" headingLevel={2} />
+              <Image />
+              <Paragraph />
+            </Card>
           </div>
         </div>
       </div>
@@ -53,4 +64,4 @@ class Info extends React.Component {
   }
 }
 
-export default Info;
+export default withRouter(Info);
