@@ -1,21 +1,54 @@
 import React from 'react';
+import Dropzone from 'react-dropzone';
 
 class UploadBox extends React.Component{
 	constructor(props){
 		super(props);
+		this.dropHandler = this.dropHandler.bind(this);
+		this.readFile = this.readFile.bind(this);
+	}
+
+	dropHandler(acceptedFiles, rejectedFiles){
+		console.log('hello');
+	}
+
+	readFile(e){
+		console.log(e);
 	}
 
 	render(){
-		return <form class="box" method="post" action="" enctype="multipart/form-data">
-		  <div class="box__input">
-		    <input class="box__file" type="file" name="files[]" id="file" data-multiple-caption="{count} files selected" multiple />
-		    <label for="file"><strong>{this.props.label}</strong><span class="box__dragndrop"> or drag it here</span>.</label>
-		    <button class="box__button" type="submit">Upload</button>
-		  </div>
-		  <div class="box__uploading">Uploading&hellip;</div>
-		  <div class="box__success">Done!</div>
-		  <div class="box__error">Error! <span></span>.</div>
-		</form>
+
+		const dropZoneStyle = {
+			display: 'block',
+			margin: 'auto',
+			border: '4px solid #7b59e8',
+			height: '30vw',
+			width: '30vw',
+			borderRadius: '5%',
+			position: 'relative',
+			boxShadow: '3px 3px 1px 1px #888888'
+		};
+
+		let dropzoneRef;
+
+		return <div>
+			<div>
+			  <Dropzone ref={(node) => { dropzoneRef = node; }} 
+			  	onDrop={ (e) => { this.readFile(e) } }
+			  	style={dropZoneStyle}
+			  >
+			  	<div className="dropzone-heading">
+			  		<div>
+			  			<p>&uarr;</p>
+			  		</div>
+			  		<h1>Drop files here.</h1>
+			  	</div>
+			  </Dropzone>
+			  <button className="choose-file" type="button" onClick={() => { dropzoneRef.open() }}>
+			      Choose files
+			  </button>
+			</div>
+		</div>
 	}
 }
 
