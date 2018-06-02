@@ -6,13 +6,27 @@ import Info from './info';
 class Home extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      links: [],
+    };
+
+    this.setLinks = this.setLinks.bind(this);
+  }
+
+  componentDidMount() {
+    this.setLinks();
+  }
+
+  async setLinks() {
+    this.setState({
+      links: [{ text: 'instructions', path: '/instructions' }, { text: 'display', path: '/display' }]
+    });
   }
 
   render() {
     return (
       <div>
-        <NavBar links={['about', 'instructions', 'display']} />
+        <NavBar links={this.state.links} />
         <Landing />
         <Info />
       </div>

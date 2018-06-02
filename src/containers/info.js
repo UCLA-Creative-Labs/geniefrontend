@@ -27,7 +27,7 @@ class Info extends React.Component {
     const onClickNull = () => {};
 
     return (
-      <div className="page-container">
+      <div className="page-container" id="about">
         <div className="page info">
           <div className="text-container">
             <h1>How may I help you?</h1>

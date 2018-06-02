@@ -3,6 +3,12 @@ import React from 'react';
 import COMPONENTS, { getElement } from '../config/config';
 import Card from '../components/Card';
 import Button from '../components/Button';
+import ButtonBar from '../components/ButtonBar';
+import Heading from '../components/Heading';
+import Image from '../components/Image';
+import InlineStepper from '../components/InlineStepper';
+import Paragraph from '../components/Paragraph';
+import phone from '../assets/images/phone.png';
 import { getDisplay } from '../api/api';
 
 class Display extends React.Component {
@@ -48,14 +54,38 @@ class Display extends React.Component {
       padding: '5rem'
     };
 
+    const cardStyle = {
+      position: 'relative',
+      marginTop: '50px',
+    };
+
+    const onClickNull = () => {};
+
     return (
-      <div className="display" style={displayStyle}>
-        <Card size="medium" >
-          {this.state.testcomponents.map((component, index) => (
-            getElement(component, index)
-          ))}
-        </Card>
-        <Button onClick={this.setComponents} color="primary" label="Get Display" />
+      <div>
+        <div className="display" style={displayStyle}>
+          <Card size="medium" >
+            {this.state.testcomponents.map((component, index) => (
+              getElement(component, index)
+            ))}
+          </Card>
+          <Button onClick={this.setComponents} color="primary" label="Get Display" />
+        </div>
+        <div className="page-container">
+          <div className="phone-container">
+            <img className="phone" alt="phone" src={phone} />
+            <div style={cardStyle}>
+              <Card size="small">
+                <Heading center content="genie" headingLevel={2} />
+                <InlineStepper label="yuh" />
+                <Image />
+                <Heading content="Learn" headingLevel={3} />
+                <Paragraph />
+                <ButtonBar label="title" buttonLabel="clicky" buttonColor="primary" onClick={onClickNull} />
+              </Card>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
