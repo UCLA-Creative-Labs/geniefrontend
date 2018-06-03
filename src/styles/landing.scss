@@ -30,7 +30,9 @@
   }
 
   .splash-container {
-    max-width: 70%;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
     height: 80%;
     position: absolute;
     align-self: flex-end;

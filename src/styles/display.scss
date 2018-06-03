@@ -1,0 +1,17 @@
+@import "../config/styles";
+
+.page-container {
+  display: flex;
+  justify-content: center;
+
+  .phone-container {
+    display: flex;
+    justify-content: center;
+    width: 650px;
+
+    .phone {
+      position: absolute;
+      height: 611px;
+    }
+  }
+}
