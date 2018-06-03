@@ -411,6 +411,13 @@ body {
       position: absolute;
       margin: 0; }
 
+.upload-err {
+  font-weight: lighter;
+  color: gray;
+  font-family: "Avenir Light";
+  display: block;
+  margin-top: 20px; }
+
 @font-face {
   font-family: 'Avenir Black';
   src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");

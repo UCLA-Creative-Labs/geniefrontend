@@ -1,36 +1,7 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
 import Button from '../Button';
-
-const sendFile = async (data) => {
-	try{
-		const res = await fetch('http://localhost:3001/display', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(data),
-		});
-
-		const json = await res.json();
-		if (json.status > 200) { // do error handling later
-      if (json.err) {
-        throw new Error(json.err);
-      } else {
-        throw new Error('Error occurred getting display.');
-      }
-    }
-
-    return {
-    	err: false,
-    	components: json.components
-    }
-	} catch(e){
-		return {
-			err: e.message
-		}
-	}
-}
+import { sendFile } from '../../api/api';
 
 const fileToBase64 = (file) => {
 	return new Promise((resolve, reject) => {
@@ -67,6 +38,7 @@ class UploadBox extends React.Component{
 	async readFile(acceptedFiles, rejectedFiles){
 		try{
 			const data = await fileToBase64(acceptedFiles[0]);
+
 			if(data.err){
 				throw new Error(data.err);
 			}
@@ -74,13 +46,13 @@ class UploadBox extends React.Component{
 			const res = await sendFile({
 				file: data.file
 			});
-			
+
 			if(res.err){
 				this.setState({
 					err: res.err
 				});
 			} else{
-				console.log(res.components);
+				this.props.setComponents(res.components);
 			}
 		} catch(e){
 			return{
@@ -101,7 +73,7 @@ class UploadBox extends React.Component{
 			width: '25vw',
 			minWidth: '250px',
 			minHeight: '250px',
-			marginBottom: '40px',
+			marginBottom: '30px',
 		};
 
 		let dropzoneRef;
@@ -116,10 +88,10 @@ class UploadBox extends React.Component{
 			  	{({ isDragActive, isDragReject, acceptedFiles, rejectedFiles }) => {
 			  		let label = "Drop an image!";
 
-				    if (isDragActive) {
+				    if(isDragActive) {
 				      label = "This file is authorized";
 				    }
-				    else if (isDragReject) {
+				    else if(isDragReject) {
 				      label = "This file is not authorized";
 				    }
 
@@ -139,6 +111,9 @@ class UploadBox extends React.Component{
 				}}
 			  </Dropzone>
 			  <Button rounded large ghost color="primary" onClick={() => { dropzoneRef.open() }} label="Choose files"/>
+			  <span className="upload-err">
+			  	{ this.state.err ? this.state.err : '' }
+			  </span>
 			</div>
 		</div>
 	}

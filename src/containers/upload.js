@@ -2,23 +2,44 @@ import React from 'react';
 
 import Button from '../components/Button';
 import UploadBox from '../components/UploadBox';
+import Card from '../components/Card';
+import { getElement } from '../config/config';
 
 class Upload extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-
+			components: null,
 		}
+		this.setComponents = this.setComponents.bind(this);
+	}
+
+	setComponents(components){
+		this.setState({
+			components: components
+		});
 	}
 
 	render(){
-		return <div className="page-container">
-			<div className="page upload">
-				<div className="upload-container">
-					<UploadBox label="Drag files to upload" />
+		if(this.state.components){
+			return <div className="page-container">
+				<div className="page components">
+					<Card size="medium" >
+            {this.state.components.map((component, index) => (
+              getElement(component, index)
+            ))}
+          </Card>
 				</div>
 			</div>
-		</div>
+		} else{
+			return <div className="page-container">
+				<div className="page upload">
+					<div className="upload-container">
+						<UploadBox setComponents={this.setComponents} label="Drag files to upload" />
+					</div>
+				</div>
+			</div>
+		}
 	}
 }
 
