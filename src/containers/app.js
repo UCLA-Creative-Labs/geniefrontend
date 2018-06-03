@@ -6,6 +6,7 @@ import NavBar from '../components/NavBar';
 import Home from './home';
 import Display from './display';
 import Upload from './upload';
+import Instructions from './instructions';
 
 const App = () => (
   <div>
@@ -13,6 +14,7 @@ const App = () => (
     <Route exact path="/" component={Home} />
     <Route exact path="/display" component={Display} />
     <Route exact path="/upload" component={Upload} />
+    <Route exact path="/instructions" component={Instructions} />
   </div>
 );
 
