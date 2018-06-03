@@ -110,7 +110,7 @@ class UploadBox extends React.Component{
 				  	</div>
 				}}
 			  </Dropzone>
-			  <Button rounded large ghost color="primary" onClick={() => { dropzoneRef.open() }} label="Choose files"/>
+			  <Button rounded large ghost color="primary" onClick={() => { dropzoneRef.open() }} label="Choose a file"/>
 			  <span className="upload-err">
 			  	{ this.state.err ? this.state.err : '' }
 			  </span>

@@ -1,4 +1,29 @@
 .upload-container{
 	margin: auto;
 	text-align: center;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	padding: 50px;
+	box-sizing: border-box;
+
+	.upload-heading{
+		margin-bottom: 50px;
+		.heading1{
+			margin-bottom: 0;
+		}
+
+		.pg{
+			color: $font-color-secondary;
+		}
+		@media only screen and (max-width: 600px) {
+		   display: none;
+		}
+	}
+
 }
+

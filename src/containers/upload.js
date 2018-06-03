@@ -2,6 +2,8 @@ import React from 'react';
 
 import UploadBox from '../components/UploadBox';
 import Card from '../components/Card';
+import Heading from '../components/Heading';
+import Paragraph from '../components/Paragraph';
 import { getElement } from '../config/config';
 
 class Upload extends React.Component {
@@ -38,7 +40,13 @@ class Upload extends React.Component {
       <div className="page-container">
         <div className="page upload">
           <div className="upload-container">
-            <UploadBox setComponents={this.setComponents} label="Drag files to upload" />
+          	<div className="upload-heading">
+          		<Heading headingLevel="1" content="Upload your image" />
+          		<Paragraph text="Watch your ideas come to life." />
+          	</div>
+           <div className="upload-dropzone">
+           	 <UploadBox className="upload-dropzone" setComponents={this.setComponents} label="Drag files to upload" />
+           </div>
           </div>
         </div>
       </div>

@@ -729,7 +729,25 @@ body {
 
 .upload-container {
   margin: auto;
-  text-align: center; }
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 50px;
+  box-sizing: border-box; }
+  .upload-container .upload-heading {
+    margin-bottom: 50px; }
+    .upload-container .upload-heading .heading1 {
+      margin-bottom: 0; }
+    .upload-container .upload-heading .pg {
+      color: #5D5869; }
+    @media only screen and (max-width: 600px) {
+      .upload-container .upload-heading {
+        display: none; } }
 
 @font-face {
   font-family: 'Avenir Black';
