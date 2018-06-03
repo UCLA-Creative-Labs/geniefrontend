@@ -86,19 +86,32 @@ body {
     border-radius: 20px; }
   .btn.large {
     font-size: 1.2rem;
-    height: 3.2rem;
-    border-radius: 1.6rem; }
-  .btn.ghost {
+    height: 3.2rem; }
+    .btn.large.rounded {
+      border-radius: 1.6rem; }
+  .btn.ghost, .btn.textOnly {
     background: none;
     color: #8865EA; }
-    .btn.ghost:hover, .btn.ghost:active, .btn.ghost:focus {
+    .btn.ghost:hover, .btn.textOnly:hover, .btn.ghost:active, .btn.textOnly:active, .btn.ghost:focus, .btn.textOnly:focus {
       outline: 0;
       background-color: #FCFCFF;
       -webkit-box-shadow: 1px 2px 4px #8865EA;
       -moz-box-shadow: 1px 2px 4px #8865EA;
       box-shadow: 1px 2px 4px #8865EA; }
+  .btn.textOnly {
+    border-width: 0px;
+    color: #020202; }
+    .btn.textOnly:hover, .btn.textOnly:active, .btn.textOnly:focus {
+      outline: 0;
+      background-color: #E5DAF0;
+      -webkit-box-shadow: 0px 0px 0px #8865EA;
+      -moz-box-shadow: 0px 0px 0px #8865EA;
+      box-shadow: 0px 0px 0px #8865EA; }
   .btn:hover, .btn:active, .btn:focus {
-    outline: 0; }
+    outline: 0;
+    -webkit-box-shadow: 1px 1px 1px #8865EA;
+    -moz-box-shadow: 1px 1px 1px #8865EA;
+    box-shadow: 1px 1px 1px #8865EA; }
   .btn .light {
     font-family: "Avenir Light"; }
 
@@ -181,7 +194,7 @@ body {
   box-shadow: 0px 0px 35px rgba(2, 2, 2, 0.18);
   background: #FFFFFF;
   width: 400px;
-  margin: 15px;
+  margin: 15px 15px 0 15px;
   height: auto;
   overflow: visible; }
   .card-small {
@@ -376,27 +389,69 @@ body {
     font-family: "Avenir Light";
     color: #5D5869;
     font-size: 17px; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Light';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Light.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Charter';
+  src: url("../assets/fonts/charter/Charter.woff2") format("woff2"), url("../assets/fonts/charter/Charter.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 .nav-container {
-  padding: 50px 50px 50px 50px;
   font-family: "Avenir Black";
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  height: 13vh;
+  width: 100vw;
+  position: absolute; }
   .nav-container .left {
+    flex: 1;
     display: flex;
     flex-direction: row;
     align-items: center; }
-    .nav-container .left .genie {
-      margin-right: 10px; }
-    .nav-container .left .genie-text {
-      margin-left: 10px;
-      max-width: 97px;
-      max-height: 37px; }
+    .nav-container .left .logo-container {
+      height: 100%;
+      width: fit-content; }
+      .nav-container .left .logo-container .logo {
+        margin: 0 15px 0 15px;
+        max-height: 55%;
+        transform: translate(0, -50%);
+        top: 50%;
+        position: relative; }
+    .nav-container .left .genie-container {
+      height: 100%;
+      width: fit-content; }
+      .nav-container .left .genie-container .genie-text {
+        margin-left: 10px;
+        max-height: 25%;
+        transform: translate(0, -50%);
+        top: 50%;
+        position: relative; }
   .nav-container .link-container {
+    flex: 1;
     display: flex;
     flex-direction: row;
     align-items: center;
     max-width: 100vw;
-    margin-right: 45px; }
+    margin-right: 45px;
+    justify-content: flex-end; }
     .nav-container .link-container .links {
       padding-left: 10px; }
     .nav-container .link-container .link-text {
@@ -458,7 +513,9 @@ body {
       font-size: 1.3rem;
       letter-spacing: .02rem; }
   .landing .splash-container, .info .splash-container {
-    max-width: 70%;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
     height: 80%;
     position: absolute;
     align-self: flex-end; }
@@ -529,3 +586,38 @@ body {
   .info .example-container {
     flex: 1;
     height: fit-content; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Light';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Light.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Charter';
+  src: url("../assets/fonts/charter/Charter.woff2") format("woff2"), url("../assets/fonts/charter/Charter.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+.page-container {
+  display: flex;
+  justify-content: center; }
+  .page-container .phone-container {
+    display: flex;
+    justify-content: center;
+    width: 650px; }
+    .page-container .phone-container .phone {
+      position: absolute;
+      height: 611px; }

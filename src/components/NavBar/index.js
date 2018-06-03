@@ -2,22 +2,28 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import genie from '../../assets/images/genie.png';
-import genietext from '../../assets/images/genie-text.png';
+import logo from '../../assets/images/logo.png';
 import Button from '../Button';
 
 const NavBar = props => (
   <div className="nav-container">
     <div className="left">
-      <img className="genie" alt="genie" src={genie} />
-      <img className="genie-text" alt="genie text" src={genietext} />
+      <div className="logo-container" >
+        <img className="logo" alt="genie" src={logo} />
+      </div>
+      <div className="genie-container">
+        <img className="genie-text" alt="genie text" src={genie} />
+      </div>
     </div>
 
     <div className="link-container">
       {props.links.map((link, index) =>
-        <Route key={index} render={({ history }) => (
-          <Button type='button' color="primary" ghost rounded label={`${link}`} onClick={() => { history.push(`/${link}`) }} />
-        )} />
-      )}
+        (<Route
+          key={index}
+          render={({ history }) => (
+            <Button color="primary" medium textOnly label={`${link.text}`} onClick={() => { history.push(`${link.path}`); }} />
+          )}
+        />))}
     </div>
   </div>
 );

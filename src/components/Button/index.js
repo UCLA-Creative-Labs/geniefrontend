@@ -12,6 +12,9 @@ const Button = (props) => {
   if (props.large) {
     buttonClasses.push('large');
   }
+  if (props.textOnly) {
+    buttonClasses.push('textOnly');
+  }
 
   return (
     <div>
