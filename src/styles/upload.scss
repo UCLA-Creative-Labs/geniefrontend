@@ -11,6 +11,14 @@
 	padding: 50px;
 	box-sizing: border-box;
 
+	.upload-dropzone{
+		button{
+			background-color: #FCFCFF;
+			border: none;
+			@include box-shadow(0px, 0px, 4px, $primary);
+		}
+	}
+
 	.upload-heading{
 		margin-bottom: 50px;
 		.heading1{
@@ -24,6 +32,20 @@
 		   display: none;
 		}
 	}
+}
 
+.bg-container {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 80%;
+    position: absolute;
+    align-self: flex-end;
+    z-index: -1;
+    img {
+     width: 100%;
+     max-height: 80vh;
+     min-height: 60vh;
+    }
 }
 

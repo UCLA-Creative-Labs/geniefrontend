@@ -739,6 +739,12 @@ body {
   flex-wrap: wrap;
   padding: 50px;
   box-sizing: border-box; }
+  .upload-container .upload-dropzone button {
+    background-color: #FCFCFF;
+    border: none;
+    -webkit-box-shadow: 0px 0px 4px #8865EA;
+    -moz-box-shadow: 0px 0px 4px #8865EA;
+    box-shadow: 0px 0px 4px #8865EA; }
   .upload-container .upload-heading {
     margin-bottom: 50px; }
     .upload-container .upload-heading .heading1 {
@@ -748,6 +754,19 @@ body {
     @media only screen and (max-width: 600px) {
       .upload-container .upload-heading {
         display: none; } }
+
+.bg-container {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  width: 80%;
+  position: absolute;
+  align-self: flex-end;
+  z-index: -1; }
+  .bg-container img {
+    width: 100%;
+    max-height: 80vh;
+    min-height: 60vh; }
 
 @font-face {
   font-family: 'Avenir Black';
