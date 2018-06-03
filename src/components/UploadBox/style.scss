@@ -1,0 +1,59 @@
+.choose-file{
+	display: block;
+	margin: auto;
+	background-color: #7b59e8;
+	border-radius: 100%;
+	color: #fafbfa;
+	font-family: $font-primary-light;
+	font-size: 1.3rem;
+	padding: 20px;
+	padding-left: 25px;
+	padding-right: 25px;
+	border-radius: 10px;
+	margin: auto;
+	margin-top: 40px;
+	transition: all .4s ease;
+	outline: none;
+	@include hover-state {
+		outline: 0;
+		cursor: pointer;
+		@include box-shadow(1px, 2px, 4px, $primary);
+	}
+}
+
+.dropzone-heading{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	font-family: $font-primary-medium;
+	padding-left: 20px;
+	padding-right: 20px;
+
+
+	h1{
+		font-size: 2rem;
+		vertical-align: middle;
+		margin: 0;
+		font-style: light;
+	}
+
+	div{
+		height: 100px;
+		width: 100px;
+		border-radius: 50%;
+		background-color: #7b59e8;
+		margin: auto;
+		margin-bottom: 40px;
+		color: #fafbfa;
+		font-size: 40px;
+		font-style: light;
+		position: relative;
+		p{
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			position: absolute;
+			margin: 0;
+		}
+	}
+}
