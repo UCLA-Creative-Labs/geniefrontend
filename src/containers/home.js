@@ -19,7 +19,7 @@ class Home extends React.Component {
 
   async setLinks() {
     this.setState({
-      links: [{ text: 'instructions', path: '/instructions' }, { text: 'display', path: '/display' }]
+      links: [{ text: 'instructions', path: '/instructions' }, { text: 'start designing', path: '/display' }]
     });
   }
 

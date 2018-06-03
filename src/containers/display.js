@@ -7,6 +7,7 @@ import ButtonBar from '../components/ButtonBar';
 import Heading from '../components/Heading';
 import Image from '../components/Image';
 import InlineStepper from '../components/InlineStepper';
+import SearchBar from '../components/SearchBar';
 import Paragraph from '../components/Paragraph';
 import phone from '../assets/images/phone.png';
 import { getDisplay } from '../api/api';
@@ -80,11 +81,15 @@ class Display extends React.Component {
             <img className="phone" alt="phone" src={phone} />
             <div style={cardStyle}>
               <Card size="small">
-                <Heading center content="genie" headingLevel={2} />
-                <InlineStepper label="yuh" />
+                <SearchBar />
+                <Heading center content="genie" headingLevel={1} />
                 <Image />
                 <Heading content="Learn" headingLevel={3} />
                 <Paragraph />
+                <Paragraph />
+                <Paragraph />
+                <InlineStepper label="yuh" />
+                <Heading content="Learn" headingLevel={3} />
                 <Paragraph />
                 <Paragraph />
                 <ButtonBar label="title" buttonLabel="clicky" buttonColor="primary" onClick={onClickNull} />

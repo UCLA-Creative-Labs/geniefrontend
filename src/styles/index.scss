@@ -14,6 +14,12 @@ body {
   }
 }
 
+@media(max-width: 420px) {
+  .page-container {
+    padding: 2.5rem;
+  }
+}
+
 .flex-center-inside {
   display: flex;
   justify-content: center;
