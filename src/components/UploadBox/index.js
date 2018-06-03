@@ -30,7 +30,7 @@ class UploadBox extends React.Component{
 		super(props);
 		this.state = {
 			file: null,
-			err: 'error',
+			err: false,
 		};
 		this.readFile = this.readFile.bind(this);
 	}
@@ -52,7 +52,7 @@ class UploadBox extends React.Component{
 					err: res.err
 				});
 			} else{
-				console.log(res.components);
+				this.props.setComponents(res.components);
 			}
 		} catch(e){
 			return{
@@ -73,7 +73,7 @@ class UploadBox extends React.Component{
 			width: '25vw',
 			minWidth: '250px',
 			minHeight: '250px',
-			marginBottom: '40px',
+			marginBottom: '30px',
 		};
 
 		let dropzoneRef;
