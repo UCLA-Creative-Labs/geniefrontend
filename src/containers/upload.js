@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Button from '../components/Button';
 import UploadBox from '../components/UploadBox';
 import Card from '../components/Card';
 import { getElement } from '../config/config';

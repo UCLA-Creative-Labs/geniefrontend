@@ -1,5 +1,4 @@
 import React from 'react';
-import NavBar from '../components/NavBar';
 import Landing from './landing';
 import Info from './info';
 
