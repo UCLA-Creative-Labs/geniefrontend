@@ -354,6 +354,59 @@ body {
   .heading3 {
     font-size: 20px; }
 
+.choose-file {
+  display: block;
+  margin: auto;
+  background-color: #7b59e8;
+  border-radius: 100%;
+  color: #fafbfa;
+  font-family: "Avenir Light";
+  font-size: 1.3rem;
+  padding: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
+  border-radius: 10px;
+  margin: auto;
+  margin-top: 40px;
+  transition: all .4s ease;
+  outline: none; }
+  .choose-file:hover, .choose-file:active, .choose-file:focus {
+    outline: 0;
+    cursor: pointer;
+    -webkit-box-shadow: 1px 2px 4px #8865EA;
+    -moz-box-shadow: 1px 2px 4px #8865EA;
+    box-shadow: 1px 2px 4px #8865EA; }
+
+.dropzone-heading {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "Avenir Medium";
+  padding-left: 20px;
+  padding-right: 20px; }
+  .dropzone-heading h1 {
+    font-size: 2rem;
+    vertical-align: middle;
+    margin: 0;
+    font-style: light; }
+  .dropzone-heading div {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    background-color: #7b59e8;
+    margin: auto;
+    margin-bottom: 40px;
+    color: #fafbfa;
+    font-size: 40px;
+    font-style: light;
+    position: relative; }
+    .dropzone-heading div p {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      margin: 0; }
+
 @font-face {
   font-family: 'Avenir Black';
   src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
@@ -587,6 +640,9 @@ body {
     flex: 1;
     height: fit-content; }
 
+.upload-container {
+  margin: auto;
+  text-align: center; }
 @font-face {
   font-family: 'Avenir Black';
   src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");

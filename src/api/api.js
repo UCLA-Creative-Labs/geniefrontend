@@ -7,7 +7,9 @@ const getDisplay = async () => {
   try {
     const res = await fetch(API.display, {
       method: 'POST',
-      'Content-Type': 'application/json',
+      headers: {
+        'Content-Type': 'application/json',
+      }
     });
     const json = await res.json();
     if (json.status > 200) { // do error handling later
