@@ -9,7 +9,7 @@ import Upload from './upload';
 
 const App = () => (
   <div>
-    <NavBar links={[{ text: 'instructions', path: '/instructions' }, { text: 'start designing', path: '/display' }]} />
+    <NavBar links={[{ text: 'instructions', path: '/instructions' }, { text: 'start designing', path: '/upload' }]} />
     <Route exact path="/" component={Home} />
     <Route exact path="/display" component={Display} />
     <Route exact path="/upload" component={Upload} />
