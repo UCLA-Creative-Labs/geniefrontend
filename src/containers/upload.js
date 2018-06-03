@@ -4,14 +4,15 @@ import UploadBox from '../components/UploadBox';
 import Card from '../components/Card';
 import { getElement } from '../config/config';
 
-class Upload extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      components: null,
-    };
-    this.setComponents = this.setComponents.bind(this);
-  }
+class Upload extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			components: null,
+			err: false,
+		}
+		this.setComponents = this.setComponents.bind(this);
+	}
 
   setComponents(components) {
     this.setState({
