@@ -612,11 +612,13 @@ body {
   font-style: normal; }
 
 .page-container {
-  height: 110vh; }
+  height: 110vh;
+  display: flex;
+  justify-content: center; }
   .page-container .phone-container {
     display: flex;
     justify-content: center;
     width: 650px; }
     .page-container .phone-container .phone {
       position: absolute;
-      height: 100%; }
+      height: 611px; }
