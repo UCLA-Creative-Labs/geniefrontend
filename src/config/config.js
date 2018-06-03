@@ -6,9 +6,10 @@ import Image from '../components/Image';
 import InlineStepper from '../components/InlineStepper';
 import Paragraph from '../components/Paragraph';
 import SearchBar from '../components/SearchBar';
+import ButtonBar from '../components/ButtonBar';
 
 const COMPONENTS = [
-  'Button',
+  'ButtonBar',
   'Image',
   'h1',
   'h2',
@@ -27,6 +28,9 @@ export const getElement = (s, i) => {
   switch (s) {
     case 'Button':
       result = <Button key={i} rounded label="button" color="primary" onClick={onClickNull} />;
+      break;
+    case 'ButtonBar':
+      result = <ButtonBar key={i} label="button" buttonLabel="click" buttonColor="primary" onClick={onClickNull} />;
       break;
     case 'InlineStepper':
       result = <InlineStepper key={i} label="inline stepper" />;
