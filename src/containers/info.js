@@ -23,7 +23,7 @@ class Info extends React.Component {
     const onClickNavigate = (path) => {
       this.props.history.push(path);
     };
-    
+
     const onClickNull = () => {};
 
     return (
@@ -58,7 +58,7 @@ class Info extends React.Component {
             <Card size="small">
               <Heading center content="genie" headingLevel={2} />
               <Image />
-              <Heading content="Learn" headingLevel={3}/>
+              <Heading content="Learn" headingLevel={3} />
               <Paragraph />
               <ButtonBar label="title" buttonLabel="clicky" buttonColor="primary" onClick={onClickNull} />
             </Card>

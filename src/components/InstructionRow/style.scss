@@ -1,0 +1,33 @@
+@import "../../config/styles";
+
+.instructionRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1rem 0 1.5rem 0;
+
+  .left{
+    flex: 1;
+    align-items: center;
+    display: flex;
+
+    .image-container {
+      width: 55%;
+      
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .right {
+    @extend .left;
+
+    .image-container {
+      img {
+        max-width: 90%;
+        width: none;
+      }
+    }
+  }
+}

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Button from '../components/Button';
 import UploadBox from '../components/UploadBox';
 import Card from '../components/Card';
 import { getElement } from '../config/config';
@@ -15,33 +14,36 @@ class Upload extends React.Component{
 		this.setComponents = this.setComponents.bind(this);
 	}
 
-	setComponents(components){
-		this.setState({
-			components: components
-		});
-	}
+  setComponents(components) {
+    this.setState({
+      components
+    });
+  }
 
-	render(){
-		if(this.state.components){
-			return <div className="page-container">
-				<div className="page components">
-					<Card size="medium" >
-            {this.state.components.map((component, index) => (
-              getElement(component, index)
-            ))}
-          </Card>
-				</div>
-			</div>
-		} else{
-			return <div className="page-container">
-				<div className="page upload">
-					<div className="upload-container">
-						<UploadBox setComponents={this.setComponents} label="Drag files to upload" />
-					</div>
-				</div>
-			</div>
-		}
-	}
+  render() {
+    if (this.state.components) {
+      return (
+        <div className="page-container">
+          <div className="page components">
+            <Card size="medium" >
+              {this.state.components.map((component, index) => (
+                getElement(component, index)
+              ))}
+            </Card>
+          </div>
+        </div>
+      );
+    }
+    return (
+      <div className="page-container">
+        <div className="page upload">
+          <div className="upload-container">
+            <UploadBox setComponents={this.setComponents} label="Drag files to upload" />
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default Upload 
+export default Upload;

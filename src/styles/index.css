@@ -485,24 +485,24 @@ body {
   height: 13vh;
   width: 100vw;
   position: absolute; }
-  .nav-container .left {
+  .nav-container .left, .nav-container .instructionRow .right, .instructionRow .nav-container .right {
     flex: 1;
     display: flex;
     flex-direction: row;
     align-items: center; }
-    .nav-container .left .logo-container {
+    .nav-container .left .logo-container, .nav-container .instructionRow .right .logo-container, .instructionRow .nav-container .right .logo-container {
       height: 100%;
       width: fit-content; }
-      .nav-container .left .logo-container .logo {
+      .nav-container .left .logo-container .logo, .nav-container .instructionRow .right .logo-container .logo, .instructionRow .nav-container .right .logo-container .logo {
         margin: 0 15px 0 15px;
         max-height: 55%;
         transform: translate(0, -50%);
         top: 50%;
         position: relative; }
-    .nav-container .left .genie-container {
+    .nav-container .left .genie-container, .nav-container .instructionRow .right .genie-container, .instructionRow .nav-container .right .genie-container {
       height: 100%;
       width: fit-content; }
-      .nav-container .left .genie-container .genie-text {
+      .nav-container .left .genie-container .genie-text, .nav-container .instructionRow .right .genie-container .genie-text, .instructionRow .nav-container .right .genie-container .genie-text {
         margin-left: 10px;
         max-height: 25%;
         transform: translate(0, -50%);
@@ -529,6 +529,47 @@ body {
         outline: 0; }
   .nav-container .buffer {
     flex: 2; }
+
+@font-face {
+  font-family: 'Avenir Black';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
+  font-weight: 900;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Medium';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Medium.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Avenir Light';
+  src: url("../assets/fonts/avenir/AvenirLTStd-Light.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Charter';
+  src: url("../assets/fonts/charter/Charter.woff2") format("woff2"), url("../assets/fonts/charter/Charter.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
+.instructionRow {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1rem 0 1.5rem 0; }
+  .instructionRow .left, .instructionRow .right {
+    flex: 1;
+    align-items: center;
+    display: flex; }
+    .instructionRow .left .image-container, .instructionRow .right .image-container {
+      width: 55%; }
+      .instructionRow .left .image-container img, .instructionRow .right .image-container img {
+        width: 100%; }
+  .instructionRow .right .image-container img {
+    max-width: 90%;
+    width: none; }
 
 @font-face {
   font-family: 'Avenir Black';
