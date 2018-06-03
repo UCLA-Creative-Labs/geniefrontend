@@ -10,6 +10,7 @@ class Upload extends React.Component{
 		super(props);
 		this.state = {
 			components: null,
+			err: false,
 		}
 		this.setComponents = this.setComponents.bind(this);
 	}
