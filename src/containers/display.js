@@ -57,6 +57,10 @@ class Display extends React.Component {
     const cardStyle = {
       position: 'relative',
       marginTop: '50px',
+      width: '330px',
+      height: '490px',
+      overflow: 'scroll',
+      padding: '2px 0 0 0'
     };
 
     const onClickNull = () => {};
@@ -80,6 +84,8 @@ class Display extends React.Component {
                 <InlineStepper label="yuh" />
                 <Image />
                 <Heading content="Learn" headingLevel={3} />
+                <Paragraph />
+                <Paragraph />
                 <Paragraph />
                 <ButtonBar label="title" buttonLabel="clicky" buttonColor="primary" onClick={onClickNull} />
               </Card>
