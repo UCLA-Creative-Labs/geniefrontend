@@ -33,6 +33,10 @@ body {
     height: 75vh;
     width: 100%; }
 
+@media (max-width: 420px) {
+  .page-container {
+    padding: 2.5rem; } }
+
 .flex-center-inside, .heading.center, .info .example-container {
   display: flex;
   justify-content: center;
@@ -522,6 +526,10 @@ body {
     .landing .splash-container img, .info .splash-container img {
       max-height: 100%; }
 
+@media (max-width: 420px) {
+  .splash-container {
+    display: none; } }
+
 @font-face {
   font-family: 'Avenir Black';
   src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
@@ -586,6 +594,37 @@ body {
   .info .example-container {
     flex: 1;
     height: fit-content; }
+
+@media (max-width: 420px) {
+  .info .text-container h1 {
+    font-size: 1.5rem;
+    flex: 1; }
+  .info .text-container .info-container {
+    flex: 15;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center; }
+    .info .text-container .info-container img {
+      max-width: 2rem;
+      max-height: 2rem;
+      flex: 1;
+      margin: 0 2rem 0 0; }
+    .info .text-container .info-container .info-text {
+      flex: 8;
+      display: flex;
+      flex-direction: column; }
+      .info .text-container .info-container .info-text h2 {
+        flex: 1;
+        font-size: .85rem;
+        font-family: "Avenir Medium";
+        margin: .2rem 0 .2rem 0; }
+      .info .text-container .info-container .info-text p {
+        flex: 2;
+        margin: .2rem 0 .2rem 0;
+        font-size: .7rem; }
+  .info .example-container {
+    display: none; } }
 
 @font-face {
   font-family: 'Avenir Black';
