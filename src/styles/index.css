@@ -613,6 +613,18 @@ body {
   font-weight: normal;
   font-style: normal; }
 
+.divider {
+  height: 250px;
+  width: 100vw;
+  color: #FCFCFF;
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Avenir Medium";
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(90deg, #5603d7 0%, #a690f5 60%, #2eb0f2 100%); }
+
 .landing, .info {
   min-height: 75vh;
   height: auto;
