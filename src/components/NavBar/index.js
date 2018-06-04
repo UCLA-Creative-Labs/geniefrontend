@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 
 import genie from '../../assets/images/genie.png';
 import logo from '../../assets/images/logo.png';
@@ -21,7 +21,7 @@ const NavBar = props => (
         (<Route
           key={index}
           render={({ history }) => (
-            <Button color="primary" medium textOnly label={`${link.text}`} onClick={() => { history.push(`${link.path}`); }} />
+            <Link className="link-text" to={link.path}>{link.text}</Link>
           )}
         />))}
     </div>
