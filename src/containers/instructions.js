@@ -40,8 +40,6 @@ class Instructions extends React.Component {
         <InstructionRow imageLeft={searchLofi} imageRight={searchHifi} />
         <InstructionRow textLeft="Utility" />
         <InstructionRow imageLeft={stepLofi} imageRight={stepHifi} />
-
-
       </div>
     );
   }

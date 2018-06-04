@@ -28,9 +28,9 @@ body {
   background-color: #FCFCFF; }
 
 .page-container {
-  padding: 5rem; }
+  padding: 12vh; }
   .page-container .page {
-    height: 75vh;
+    height: 76vh;
     width: 100%; }
 
 @media (max-width: 420px) {
@@ -200,7 +200,8 @@ body {
   width: 400px;
   margin: 15px 15px 0 15px;
   height: auto;
-  overflow: visible; }
+  overflow: visible;
+  padding: 5px 0 5px 0; }
   .card-small {
     width: 300px; }
   .card-medium {
@@ -312,7 +313,8 @@ body {
 .pg-container {
   width: calc(100% - 2*$padding-lr);
   padding: 0 20px 0 20px;
-  margin: 10px 0 10px 0; }
+  margin: 10px 0 10px 0;
+  text-align: left; }
   .pg-container .pg {
     font-size: 16px;
     font-family: "Charter";
@@ -348,7 +350,8 @@ body {
   padding: 0 20px 0 20px;
   width: calc(100% - 2*$padding-lr);
   height: auto;
-  margin: 10px 0 10px 0; }
+  margin: 12px 0 10px 0;
+  text-align: left; }
   .heading h1, .heading h2, .heading h3 {
     margin: 0; }
   .heading1 {
@@ -357,6 +360,8 @@ body {
     font-size: 28px; }
   .heading3 {
     font-size: 20px; }
+  .heading.center {
+    text-align: center; }
 
 .choose-file {
   display: block;
