@@ -15,7 +15,9 @@ class Home extends React.Component {
     return (
       <div>
         <Landing />
-        <img src={divider} alt="divider" style={{ width: '100%', }} />
+        <div className="divider">
+          <p>Go from drawn mockups to code in minutes.</p>
+        </div>
         <Info />
       </div>
     );

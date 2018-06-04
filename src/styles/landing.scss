@@ -1,5 +1,18 @@
 @import "../config/styles";
 
+.divider{
+  height: 250px;
+  width: 100vw;
+  color: #FCFCFF;
+  text-align: center;
+  font-size: 2rem;
+  font-family: $font-primary-medium;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background: linear-gradient(90deg, rgba(86,3,215,1) 0%, rgba(166,144,245,1) 60%, rgba(46,176,242,1) 100%);
+}
+
 .landing {
   min-height: 75vh;
   height: auto;
