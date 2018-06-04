@@ -4,7 +4,8 @@
     padding: 0 $padding-lr 0 $padding-lr;
     width: calc(100% - 2*$padding-lr);
     height: auto;
-    margin: 10px 0 10px 0;
+    margin: 12px 0 10px 0;
+    text-align: left;
 
     h1,h2,h3 {
         margin: 0;
@@ -22,5 +23,6 @@
 
     &.center {
         @extend .flex-center-inside;
+        text-align: center;
     }
 }
