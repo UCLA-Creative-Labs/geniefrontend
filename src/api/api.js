@@ -60,4 +60,27 @@ const sendFile = async (data) => {
   }
 }
 
-export { getDisplay, sendFile };
+const getStarterFiles = async (data) =>{
+  try{
+    const res = await fetch('http://localhost:3001/download', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data),
+    });
+
+    const blob = await res.blob();
+
+    return {
+      err: false,
+      blob: blob
+    }
+  } catch(e){
+    return {
+      err: e.message
+    }
+  }
+}
+
+export { getDisplay, sendFile, getStarterFiles };
