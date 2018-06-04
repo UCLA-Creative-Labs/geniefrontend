@@ -31,6 +31,8 @@ class UploadBox extends React.Component{
 		this.state = {
 			file: null,
 			err: false,
+			acceptedFiles: null,
+			rejectedFiles: null
 		};
 		this.readFile = this.readFile.bind(this);
 	}
@@ -48,16 +50,19 @@ class UploadBox extends React.Component{
 			});
 
 			if(res.err){
-				this.setState({
-					err: res.err
-				});
-			} else{
-				this.props.setComponents(res.components);
-			}
+				throw new Error(res.err);
+			} 
+
+			this.setState({
+				acceptedFiles: acceptedFiles,
+				rejectedFiles: rejectedFiles,
+			});
+
+			this.props.setComponents(res.components);
 		} catch(e){
-			return{
-				err: e.messsage
-			}
+			this.setState({
+				err: e.message
+			})
 		}
 	}
 

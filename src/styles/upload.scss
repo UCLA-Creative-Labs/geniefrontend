@@ -1,14 +1,15 @@
+.upload-page-container{
+	padding: 100px;
+}
+
 .upload-container{
 	margin: auto;
 	text-align: center;
 	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
 	display: flex;
 	align-items: center;
 	justify-content: space-around;
 	flex-wrap: wrap;
-	padding: 50px;
 	box-sizing: border-box;
 
 	.upload-dropzone{
@@ -26,6 +27,7 @@
 		}
 
 		.pg{
+			font-size: 1.15rem;
 			color: $font-color-secondary;
 		}
 		@media only screen and (max-width: 600px) {
@@ -47,5 +49,12 @@
      max-height: 80vh;
      min-height: 60vh;
     }
+}
+
+.components-card{
+	.card{
+		margin: 0;
+		margin-bottom: 50px;
+	}
 }
 
