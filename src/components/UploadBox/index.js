@@ -1,8 +1,7 @@
 import React from 'react';
 import Dropzone from 'react-dropzone';
 import Button from '../Button';
-import download from 'downloadjs';
-import { sendFile, getStarterFiles } from '../../api/api';
+import { sendFile } from '../../api/api';
 
 const fileToBase64 = (file) => {
 	return new Promise((resolve, reject) => {
@@ -36,7 +35,6 @@ class UploadBox extends React.Component{
 			rejectedFiles: null
 		};
 		this.readFile = this.readFile.bind(this);
-		this.getStarterFiles = this.getStarterFiles.bind(this);
 	}
 
 	async readFile(acceptedFiles, rejectedFiles){
@@ -65,32 +63,6 @@ class UploadBox extends React.Component{
 			this.setState({
 				err: e.message
 			})
-		}
-	}
-
-	async getStarterFiles(){
-		if(!this.state.acceptedFiles){
-			return;
-		}
-		try{
-			const data = await fileToBase64(this.state.acceptedFiles[0]);
-			if(data.err){
-				throw new Error(data.err);
-			}
-
-			const res = await getStarterFiles({
-				file: data.file
-			});
-
-			if(res.err){
-				throw new Error(res.err);
-			}
-
-			download(res.blob, 'MyProject.zip');
-		} catch(e){
-			this.setState({
-				err: e.message
-			});
 		}
 	}
 
@@ -145,7 +117,6 @@ class UploadBox extends React.Component{
 				}}
 			  </Dropzone>
 			  <Button rounded large ghost color="secondary" onClick={() => { dropzoneRef.open() }} label="Choose a file"/>
-			 	{this.state.acceptedFiles ?  <Button rounded large ghost color="secondary" onClick={ this.getStarterFiles } label="Get starter files!"/> : null}
 			  <span className="upload-err">
 			  	{ this.state.err ? this.state.err : '' }
 			  </span>
