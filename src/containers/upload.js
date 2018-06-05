@@ -25,11 +25,25 @@ class Upload extends React.Component {
       loading: false,
     };
     this.getStarterFiles = this.getStarterFiles.bind(this);
-    this.setUploadState = this.setUploadState.bind(this);
+    this.setComponents = this.setComponents.bind(this);
+    this.setImage = this.setImage.bind(this);
+    this.setLoading = this.setLoading.bind(this);
   }
 
-  setUploadState(state){
-  	this.setState(state);
+  async setComponents(components){
+  	this.setState({
+  		components: components
+  	});
+  }
+
+  setImage(image){
+  	this.setState({
+  		uploadedImage: image,
+  	})
+  }
+
+  setLoading(mode){
+  	loading: mode
   }
 
   async getStarterFiles(){
@@ -117,7 +131,7 @@ class Upload extends React.Component {
 	                    <Paragraph text="Watch your ideas come to life." />
 	                  </div>
 	                  <div className="upload-dropzone">
-	                    <UploadBox className="upload-dropzone" setUploadState={this.setUploadState} label="Drag files to upload" />
+	                    <UploadBox className="upload-dropzone" setLoading={this.setLoading} setComponents={this.setComponents} setImage={this.setImage} label="Drag files to upload" />
 	                  </div>
 	              </div>
               }
@@ -133,7 +147,7 @@ class Upload extends React.Component {
                 <h1>Your app on a phone.</h1>
                 <div style={{width: '70%'}}>
                   <h3 style={{color: '#5D5869', margin: '50px 0 50px 0', lineHeight: '145%', fontSize: '21px', }}>We took your drawing and generated this working prototype. Download the code for your React application below.</h3>
-                  <Button rounded ghost large color="secondary" label="Download your prototype" onClick={() => getStarterFiles()} />
+                  <Button rounded ghost large color="secondary" label="Download your prototype" onClick={() => this.getStarterFiles()} />
                 </div>
               </div>
               <div className="phone-container">
