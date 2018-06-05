@@ -21,7 +21,6 @@ class WebcamCapture extends React.Component {
     this.setState(state => {
       state.image = imageSrc;
     }, ()=>{
-      console.log("yuh1", this.state.image);
       this.props.onCapture(this.state.image);
     });
   };

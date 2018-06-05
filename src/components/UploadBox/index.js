@@ -5,8 +5,6 @@ import Webcam from 'react-webcam';
 import WebcamCapture from '../WebcamCapture';
 import Button from '../Button';
 
-import { sendFile } from '../../api/api';
-
 const fileToBase64 = file => new Promise((resolve, reject) => {
   const reader = new FileReader();
   reader.readAsDataURL(file);
@@ -40,31 +38,6 @@ class UploadBox extends React.Component {
     this.readFile = this.readFile.bind(this);
     this.initWebcam = this.initWebcam.bind(this);
     this.handleWebcamImage = this.handleWebcamImage.bind(this);
-    this.handleSendFile = this.handleSendFile.bind(this);
-  }
-
-
-  async handleSendFile(payload) {
-    try {
-    	this.props.setLoading(true);
-      
-      const res = await sendFile({
-        file: payload.file
-      });
-
-      if (res.err) {
-        throw new Error(res.err);
-      }
-
-      this.props.setComponents(res.components);
-      this.props.setImage(payload.file);
-      this.props.setLoading(false);
-
-    } catch (e) {
-      this.setState({
-        err: e.message
-      })
-    }
   }
 
   async readFile(acceptedFiles, rejectedFiles){
@@ -75,24 +48,9 @@ class UploadBox extends React.Component {
 				throw new Error(data.err);
 			}
 
-			this.props.setLoading(true);
-
-			const res = await sendFile({
-				file: data.file
-			});
-
-			if(res.err){
-				throw new Error(res.err);
-			} 
-
-			this.setState({
-				acceptedFiles: acceptedFiles,
-				rejectedFiles: rejectedFiles,
-			});
-
-			this.props.setComponents(res.components);
-			this.props.setImage(data.file);
-			this.props.setLoading(false);
+			this.props.setUploadState({
+				uploadedImage: data.file,
+			}, this.props.sendFile);
 		} catch(e){
 			this.setState({
 				err: e.message
@@ -111,13 +69,11 @@ class UploadBox extends React.Component {
       state.file = base64String;
       state.webcam = false;
     }, () => {
-      this.handleSendFile({
-        file: base64String,
-        err: false,
-      });
+      this.props.setUploadState({
+      	uploadedImage: base64String,
+      }, this.props.sendFile)
 	 	});
   }
-
 
   render() {
     const dropZoneStyle = {
