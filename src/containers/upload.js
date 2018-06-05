@@ -31,10 +31,10 @@ class Upload extends React.Component {
     this.setLoading = this.setLoading.bind(this);
   }
 
-  async setComponents(components){
+	async setComponents(components){
   	this.setState({
-  		components: components,
-  	})
+  		components: components
+  	});
   }
 
   setImage(image){
@@ -44,9 +44,7 @@ class Upload extends React.Component {
   }
 
   setLoading(mode){
-  	this.setState({
-  		loading: mode,
-  	})
+  	loading: mode
   }
 
   async getStarterFiles() {
