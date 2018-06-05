@@ -64,6 +64,7 @@
 	.mockup{
 		.heading{
 			padding: 0;
+			text-align: center;
 		}
 		overflow: hidden;
 		width: 25%;
@@ -73,7 +74,7 @@
 		}
 
 		.image-container {
-			width: 320px;
+			width: 100%;
 			img {
 				width: 100%;
 			}
@@ -83,6 +84,7 @@
 
 	.arrow{
 		width: 100px;
+		margin: 0px 25px 0 25px;
 		img{
 			width: 100%;
 		}
@@ -112,7 +114,7 @@
 .phone-container {
 	display: flex;
 	justify-content: center;
-	width: 650px;
+	width: fit-content !important;
 
 	.phone {
 		position: absolute;

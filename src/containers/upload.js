@@ -126,7 +126,12 @@ class Upload extends React.Component {
         {this.state.components &&
           <div className="page-container">
             <div className="page" style={phoneStyles}>
-              <h1>Your component on a phone.</h1>
+              <div>
+                <h1>Your component on a phone.</h1>
+                <div style={{width: '70%'}}>
+                  <h3 style={{color: '#5D5869', marginTop: '50px', lineHeight: '145%' }}>We took your drawing, and generated this prototype.  Download the code for your react application below.</h3>
+                </div>
+              </div>
               <div className="phone-container">
                 <img className="phone" alt="phone" src={phone} />
                 <div style={cardStyle}>
