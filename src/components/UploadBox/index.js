@@ -47,7 +47,7 @@ class UploadBox extends React.Component {
   async handleSendFile(payload) {
     try {
     	this.props.setLoading(true);
-
+      
       const res = await sendFile({
         file: payload.file
       });
