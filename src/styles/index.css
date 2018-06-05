@@ -450,6 +450,9 @@ body {
   display: block;
   margin-top: 20px; }
 
+.webcam-container {
+  display: flex; }
+
 @font-face {
   font-family: 'Avenir Black';
   src: url("../assets/fonts/avenir/AvenirLTStd-Black.woff2") format("woff2"), url("../assets/fonts/avenir/AvenirLTStd-Black.woff") format("woff");
