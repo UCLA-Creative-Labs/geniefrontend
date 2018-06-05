@@ -71,6 +71,14 @@
 		img{
 			width: 100%;
 		}
+
+		.image-container {
+			width: 320px;
+			img {
+				width: 100%;
+			}
+		}
+
 	}
 
 	.arrow{
@@ -97,6 +105,17 @@
 			margin: 0;
 			overflow: hidden;
 		}
+		
 	}
 }
 
+.phone-container {
+	display: flex;
+	justify-content: center;
+	width: 650px;
+
+	.phone {
+		position: absolute;
+		height: 566px !important;
+	}
+}

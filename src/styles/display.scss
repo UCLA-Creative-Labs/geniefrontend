@@ -7,11 +7,11 @@
   .phone-container {
     display: flex;
     justify-content: center;
+    width: 650px;
 
     .phone {
-      z-index: 10;
-      width: 110%;
       position: absolute;
+      height: 611px;
     }
   }
 }

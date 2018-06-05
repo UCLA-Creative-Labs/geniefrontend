@@ -9,7 +9,7 @@ import Image from '../components/Image';
 import InlineStepper from '../components/InlineStepper';
 import SearchBar from '../components/SearchBar';
 import Paragraph from '../components/Paragraph';
-import phone from '../assets/images/iphone.png';
+import phone from '../assets/images/phone.png';
 import { getDisplay } from '../api/api';
 
 class Display extends React.Component {
@@ -58,7 +58,7 @@ class Display extends React.Component {
     const cardStyle = {
       position: 'relative',
       marginTop: '50px',
-      width: '330px',
+      width: '300px',
       height: '490px',
       overflow: 'scroll',
       padding: '2px 0 0 0'

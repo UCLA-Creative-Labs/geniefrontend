@@ -10,6 +10,27 @@
 	font-family: $font-primary-medium;
 	margin: .2rem;
 
+
+	span {
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		transition: 0.5s;
+		padding-right: 0;
+
+		&:after {
+				content: '\00bb';
+				position: absolute;
+				opacity: 0;
+				top: 0;
+				right: -20px;
+				transition: 0.5s;
+		}
+		&:hover {
+				color: $secondary;
+		}
+	}
+
 	&-primary {
 		background-color: $primary;
 		border: .1rem solid $primary;
@@ -59,13 +80,21 @@
 	}
 
 	@include hover-state {
+		span {
+			padding-right: 25px;
+		}
 		outline: 0;
-		@include box-shadow(1px, 1px, 1px, $primary);
+		@include box-shadow(1px, 2.5px, 1px, $font-color-secondary);
 	}
 
-	@include transition (all, .75s, ease);
+	@include transition (all, .5s, ease);
 
 	.light {
 		font-family: $font-primary-light;
 	}
+}
+
+.btn:hover span:after {
+	opacity: 1;
+	right: 0;
 }

@@ -52,7 +52,7 @@ class Info extends React.Component {
                 <p>Watch as our reactive service brings your ideas to life!</p>
               </div>
             </div>
-            <Button rounded large label="Start Designing" color="primary" onClick={() => onClickNavigate('display')} />
+            <Button rounded large label="Start Designing" color="primary" onClick={() => onClickNavigate('upload')} />
           </div>
           <div className="example-container">
             <Card size="small">
