@@ -11,12 +11,13 @@ import { getStarterFiles } from '../api/api';
 import download from 'downloadjs';
 
 import bg from '../assets/images/bg-gradient-2.png';
+import phone from '../assets/images/iphone.png';
 
 class Upload extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      components: null,
+      components: ['SearchBar','h1', 'Image', 'Paragraph'],
       err: false,
     };
     this.setComponents = this.setComponents.bind(this);
@@ -34,7 +35,6 @@ class Upload extends React.Component {
 			return;
 		}
 		try{
-
 			const res = await getStarterFiles({
 				components: this.state.components
 			});
@@ -56,8 +56,9 @@ class Upload extends React.Component {
       <div className="page-container">
         <div className="page upload">
             {this.state.components &&
-              <div>
+              <div className="components-container">
               	<div className="components-card">
+              		<img className="phone" alt="phone" src={phone} />
 	                <Card size="small">
 	                  {this.state.components.map((component, index) => (
 	                    getElement(component, index)

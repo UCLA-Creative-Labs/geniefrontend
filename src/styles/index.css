@@ -801,9 +801,21 @@ body {
     max-height: 80vh;
     min-height: 60vh; }
 
-.components-card .card {
-  margin: 0;
-  margin-bottom: 50px; }
+.components-container {
+  display: flex;
+  align-items: center;
+  width: 100%; }
+  .components-container .components-card {
+    width: 26%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; }
+    .components-container .components-card .phone {
+      width: 105%;
+      position: absolute; }
+    .components-container .components-card .card {
+      width: 95%; }
 
 @font-face {
   font-family: 'Avenir Black';
@@ -834,8 +846,8 @@ body {
   justify-content: center; }
   .page-container .phone-container {
     display: flex;
-    justify-content: center;
-    width: 650px; }
+    justify-content: center; }
     .page-container .phone-container .phone {
-      position: absolute;
-      height: 611px; }
+      z-index: 10;
+      width: 110%;
+      position: absolute; }

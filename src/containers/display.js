@@ -9,7 +9,7 @@ import Image from '../components/Image';
 import InlineStepper from '../components/InlineStepper';
 import SearchBar from '../components/SearchBar';
 import Paragraph from '../components/Paragraph';
-import phone from '../assets/images/phone.png';
+import phone from '../assets/images/iphone.png';
 import { getDisplay } from '../api/api';
 
 class Display extends React.Component {
