@@ -44,7 +44,7 @@ $background-color: #FCFCFF;
 $padding-lr: 20px;
 
 @mixin hover-state {
-  &:hover, &:active, &:focus {
+  &:hover {
     @content;
   }
 }

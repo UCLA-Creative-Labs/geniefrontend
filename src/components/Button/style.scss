@@ -9,7 +9,7 @@
 	cursor: pointer;
 	font-family: $font-primary-medium;
 	margin: .2rem;
-
+	outline: 0px solid black;
 
 	span {
 		cursor: pointer;
@@ -19,26 +19,32 @@
 		padding-right: 0;
 
 		&:after {
-				content: '\00bb';
-				position: absolute;
-				opacity: 0;
-				top: 0;
-				right: -20px;
-				transition: 0.5s;
+			content: '\00bb';
+			position: absolute;
+			opacity: 0;
+			top: 0;
+			right: -20px;
+			transition: 0.5s;
 		}
 		&:hover {
-				color: $secondary;
+			color: $secondary;
 		}
 	}
 
 	&-primary {
 		background-color: $primary;
 		border: .1rem solid $primary;
+		&:active {
+			border: 0px solid black;
+		}
 	}
 
 	&-secondary {
 		background-color: $secondary;
 		border: .1rem solid $secondary;
+		&:active {
+			border: 0px solid black;
+		}
 	}
 
 	&.rounded {
@@ -80,11 +86,19 @@
 	}
 
 	@include hover-state {
+
 		span {
 			padding-right: 25px;
 		}
+
 		outline: 0;
 		@include box-shadow(1px, 2.5px, 1px, $font-color-secondary);
+
+	}
+
+	&:active {
+		background-color: $secondary;
+		outline: 0px solid black;
 	}
 
 	@include transition (all, .5s, ease);

@@ -75,6 +75,7 @@ body {
   cursor: pointer;
   font-family: "Avenir Medium";
   margin: .2rem;
+  outline: 0px solid black;
   -webkit-transition: all 0.5s ease;
   -moz-transition: all 0.5s ease;
   -ms-transition: all 0.5s ease;
@@ -98,9 +99,13 @@ body {
   .btn-primary {
     background-color: #8865EA;
     border: 0.1rem solid #8865EA; }
+    .btn-primary:active {
+      border: 0px solid black; }
   .btn-secondary {
     background-color: #E5DAF0;
     border: 0.1rem solid #E5DAF0; }
+    .btn-secondary:active {
+      border: 0px solid black; }
   .btn.rounded {
     border-radius: 20px; }
   .btn.large {
@@ -111,7 +116,7 @@ body {
   .btn.ghost, .btn.textOnly {
     background: none;
     color: #8865EA; }
-    .btn.ghost:hover, .btn.textOnly:hover, .btn.ghost:active, .btn.textOnly:active, .btn.ghost:focus, .btn.textOnly:focus {
+    .btn.ghost:hover, .btn.textOnly:hover {
       outline: 0;
       background-color: #FCFCFF;
       -webkit-box-shadow: 1px 2px 4px #8865EA;
@@ -120,19 +125,22 @@ body {
   .btn.textOnly {
     border-width: 0px;
     color: #020202; }
-    .btn.textOnly:hover, .btn.textOnly:active, .btn.textOnly:focus {
+    .btn.textOnly:hover {
       outline: 0;
       background-color: #E5DAF0;
       -webkit-box-shadow: 0px 0px 0px #8865EA;
       -moz-box-shadow: 0px 0px 0px #8865EA;
       box-shadow: 0px 0px 0px #8865EA; }
-  .btn:hover, .btn:active, .btn:focus {
+  .btn:hover {
     outline: 0;
     -webkit-box-shadow: 1px 2.5px 1px #5D5869;
     -moz-box-shadow: 1px 2.5px 1px #5D5869;
     box-shadow: 1px 2.5px 1px #5D5869; }
-    .btn:hover span, .btn:active span, .btn:focus span {
+    .btn:hover span {
       padding-right: 25px; }
+  .btn:active {
+    background-color: #E5DAF0;
+    outline: 0px solid black; }
   .btn .light {
     font-family: "Avenir Light"; }
 
@@ -398,7 +406,7 @@ body {
   margin-top: 40px;
   transition: all .4s ease;
   outline: none; }
-  .choose-file:hover, .choose-file:active, .choose-file:focus {
+  .choose-file:hover {
     outline: 0;
     cursor: pointer;
     -webkit-box-shadow: 1px 2px 4px #8865EA;
