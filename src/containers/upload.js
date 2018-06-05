@@ -62,47 +62,85 @@ class Upload extends React.Component {
 	}
 
   render() {
-    return (
-      <div className="page-container">
-        <div className="page upload">
-            {this.state.components &&
-            	<div>
-            		<div className="components-container">
-	              	<div className="mockup">
-	              		<Heading headingLevel={1} content="What you drew" />
-	              		<img src={this.state.uploadedImage}/>
-	              	</div>
-	              	<div className="arrow">
-	              		<img src={arrow} />
-	              	</div>
-	              	<div className="components-card-phone">
-	              		<img className="phone" alt="phone" src={phone} />
-		                <Card size="small">
-		                  {this.state.components.map((component, index) => (
-		                    getElement(component, index)
-		                  ))}
-		                </Card>
-	                </div>
-	              </div>
-            	</div>
-            }
+    const cardStyle = {
+      position: 'relative',
+      marginTop: '62px',
+      width: '300px',
+      height: '424px',
+      overflowY: 'scroll',
+      overflowX: 'hidden',
+      padding: '2px 0 0 0'
+    };
 
-            {!this.state.components &&
-             <div className="upload-container">
-             	 	<div className="upload-heading">
-	                <Heading headingLevel={1} content="Upload your image" />
-	                <Paragraph text="Watch your ideas come to life." />
-	              </div>
-	              <div className="upload-dropzone">
-		              <UploadBox className="upload-dropzone" setComponents={this.setComponents} setImage={this.setImage} label="Drag files to upload" />
-		          	</div>
-             </div>
-            }
+    const phoneStyles = {
+      display: 'flex',
+      justifyContent: 'center'
+    };
+
+    return (
+      <div>
+        <div className="page-container">
+          <div className="page upload">
+              {this.state.components &&
+                <div style={{overflow: 'hidden',}}>
+                  <div className="components-container">
+                    <div className="mockup">
+                      <Heading headingLevel={1} content="What you drew" />
+                      <div className="image-container" >
+                        <img src={this.state.uploadedImage}/>
+                      </div>
+                    </div>
+                    <div className="arrow">
+                      <img src={arrow} />
+                    </div>
+                    <div className="phone-container">
+                      {/* <img className="phone" alt="phone" src={phone} />
+                      <div style={cardStyle}> */}
+                        <Card size="small" >
+                          {this.state.components.map((component, index) => (
+                            getElement(component, index)
+                          ))}
+                        </Card>
+                      {/* </div> */}
+                    </div>
+                  </div>
+                </div>
+              }
+
+              {!this.state.components &&
+              <div className="upload-container">
+                  <div className="upload-heading">
+                    <Heading headingLevel={1} content="Upload your image" />
+                    <Paragraph text="Watch your ideas come to life." />
+                  </div>
+                  <div className="upload-dropzone">
+                    <UploadBox className="upload-dropzone" setComponents={this.setComponents} setImage={this.setImage} label="Drag files to upload" />
+                  </div>
+              </div>
+              }
+            </div>
+            <div className="bg-container">
+              <img alt="bg" src={bg} />
+            </div>
           </div>
-          <div className="bg-container">
-            <img alt="bg" src={bg} />
+        {this.state.components &&
+          <div className="page-container">
+            <div className="page" style={phoneStyles}>
+              <h1>Your component on a phone.</h1>
+              <div className="phone-container">
+                <img className="phone" alt="phone" src={phone} />
+                <div style={cardStyle}>
+                  <Card size="small" >
+                    {this.state.components.map((component, index) => (
+                      getElement(component, index)
+                    ))}
+                  </Card>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
+        }
+      </div>
     );
   }
 }

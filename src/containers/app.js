@@ -12,7 +12,6 @@ const App = () => (
   <div>
     <NavBar links={[{ text: 'home', path: '/' }, { text: 'instructions', path: '/instructions' }, { text: 'start designing', path: '/upload' }]} />
     <Route exact path="/" component={Home} />
-    <Route exact path="/display" component={Display} />
     <Route exact path="/upload" component={Upload} />
     <Route exact path="/instructions" component={Instructions} />
   </div>

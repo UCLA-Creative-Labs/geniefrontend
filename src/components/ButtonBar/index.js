@@ -19,7 +19,7 @@ const ButtonBar = (props) => {
     <div className="buttonBar">
       {props.label && <h3>{props.label}</h3>}
       <div className="button-container">
-        <Button label={props.buttonLabel} color={props.buttonColor} onClick={props.onClick} />
+        <Button rounded label={props.buttonLabel} color={props.buttonColor} onClick={props.onClick} />
       </div>
     </div>
   );

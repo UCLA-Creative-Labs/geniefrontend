@@ -21,7 +21,7 @@ class Landing extends React.Component {
           <div className="text-container">
             <h1>genie</h1>
             <p>Genie turns low-fidelity, hand <br /> drawn wireframes into high-fidelity <br /> web mockups in an instant.</p>
-            <Button rounded large ghost label="Start Designing" secondaryLabel=" - for free" color="primary" onClick={() => onClickNavigate('display')} />
+            <Button rounded large ghost label="Start Designing" secondaryLabel=" - for free" color="primary" onClick={() => onClickNavigate('upload')} />
           </div>
           <div className="splash-container">
             <img alt="splash" src={splash} />
