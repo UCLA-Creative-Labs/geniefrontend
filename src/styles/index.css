@@ -840,15 +840,17 @@ body {
     width: 25%;
     min-width: 350px; }
     .components-container .mockup .heading {
-      padding: 0; }
+      padding: 0;
+      text-align: center; }
     .components-container .mockup img {
       width: 100%; }
     .components-container .mockup .image-container {
-      width: 320px; }
+      width: 100%; }
       .components-container .mockup .image-container img {
         width: 100%; }
   .components-container .arrow {
-    width: 100px; }
+    width: 100px;
+    margin: 0px 25px 0 25px; }
     .components-container .arrow img {
       width: 100%; }
   .components-container .components-card-phone {
@@ -869,7 +871,7 @@ body {
 .phone-container {
   display: flex;
   justify-content: center;
-  width: 650px; }
+  width: fit-content !important; }
   .phone-container .phone {
     position: absolute;
     height: 566px !important; }
