@@ -26,25 +26,11 @@ class Upload extends React.Component {
       loading: false,
     };
     this.getStarterFiles = this.getStarterFiles.bind(this);
-    this.setComponents = this.setComponents.bind(this);
-    this.setImage = this.setImage.bind(this);
-    this.setLoading = this.setLoading.bind(this);
+    this.setUploadState = this.setUploadState.bind(this);
   }
 
-  async setComponents(components){
-  	this.setState({
-  		components: components
-  	});
-  }
-
-  setImage(image){
-  	this.setState({
-  		uploadedImage: image,
-  	})
-  }
-
-  setLoading(mode){
-  	loading: mode
+  setUploadState(state) {
+  	this.setState(state);
   }
 
   async getStarterFiles() {
@@ -69,7 +55,7 @@ class Upload extends React.Component {
   }
 
   render() {
-    const cardS
+    const cardStyle = {
       position: 'relative',
       marginTop: '62px',
       width: '300px',
@@ -81,9 +67,7 @@ class Upload extends React.Component {
 
     const phoneStyles = {
       display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      width: '80%',
+      justifyContent: 'center'
     };
 
     return (
@@ -122,32 +106,37 @@ class Upload extends React.Component {
                   {/* </div> */}
                 </div>
               </div>
-              }
-
-              {!this.state.loading && !this.state.components &&
-	              <div className="upload-container">
-	                  <div className="upload-heading">
-	                    <Heading headingLevel={1} content="Upload your image" />
-	                    <Paragraph text="Watch your ideas come to life." />
-	                  </div>
-	                  <div className="upload-dropzone">
-	                    <UploadBox className="upload-dropzone" setLoading={this.setLoading} setComponents={this.setComponents} setImage={this.setImage} label="Drag files to upload" />
-	                  </div>
-	              </div>
-              }
             </div>
-            <div className="bg-container">
-              <img alt="bg" src={bg} />
+            }
+
+            {!this.state.loading && !this.state.components &&
+              <div className="upload-container">
+                <div className="upload-heading">
+                  <Heading headingLevel={1} content="Upload your image" />
+                  <Paragraph text="Watch your ideas come to life." />
+                </div>
+                <div className="upload-dropzone">
+                  <UploadBox className="upload-dropzone" setUploadState={this.setUploadState} label="Drag files to upload" />
+                </div>
+              </div>
+            }
+          </div>
+          <div className="bg-container">
+            <img alt="bg" src={bg} />
           </div>
         </div>
         {this.state.components &&
           <div className="page-container">
             <div className="page" style={phoneStyles}>
-              <div>
-                <h1>Your app on a phone.</h1>
-                <div style={{width: '70%'}}>
-                  <h3 style={{color: '#5D5869', margin: '50px 0 50px 0', lineHeight: '145%', fontSize: '21px', }}>We took your drawing and generated this working prototype. Download the code for your React application below.</h3>
-                  <Button rounded ghost large color="secondary" label="Download your prototype" onClick={() => this.getStarterFiles()} />
+              <div style={{ flex: '7' }}>
+                <h1>Your component on a phone.</h1>
+                <div style={{ width: '70%' }}>
+                  <h3 style={{
+                    color: '#5D5869', margin: '50px 0 50px 0', lineHeight: '145%', fontSize: '21px',
+                  }}
+                  >We took your drawing, and generated this prototype.  Download the code for your react application below.
+                  </h3>
+                  <Button rounded ghost large color="secondary" label="Download your prototype" onClick={() => getStarterFiles()} />
                 </div>
               </div>
               <div className="phone-container" style={{ flex: '4' }}>
