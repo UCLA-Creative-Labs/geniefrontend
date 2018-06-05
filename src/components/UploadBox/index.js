@@ -59,6 +59,7 @@ class UploadBox extends React.Component{
 			});
 
 			this.props.setComponents(res.components);
+			this.props.setImage(data.file);
 		} catch(e){
 			this.setState({
 				err: e.message

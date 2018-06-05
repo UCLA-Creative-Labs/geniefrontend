@@ -11,22 +11,33 @@ import { getStarterFiles } from '../api/api';
 import download from 'downloadjs';
 
 import bg from '../assets/images/bg-gradient-2.png';
+import phone from '../assets/images/iphone.png';
+import arrow from '../assets/images/arrow.png';
 
 class Upload extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      // components: ['SearchBar','h1', 'Image', 'Paragraph'],
       components: null,
       err: false,
+      uploadedImage: null
     };
     this.setComponents = this.setComponents.bind(this);
     this.getStarterFiles = this.getStarterFiles.bind(this);
+    this.setImage = this.setImage.bind(this);
   }
 
   async setComponents(components) {
     this.setState({
-      components,
+      components: components,
     });
+  }
+
+  setImage(image){
+  	this.setState({
+  		uploadedImage: image
+  	})
   }
 
   async getStarterFiles(){
@@ -34,7 +45,6 @@ class Upload extends React.Component {
 			return;
 		}
 		try{
-
 			const res = await getStarterFiles({
 				components: this.state.components
 			});
@@ -55,20 +65,26 @@ class Upload extends React.Component {
     return (
       <div className="page-container">
         <div className="page upload">
-          <div className="upload-page-container">
             {this.state.components &&
-              <div>
-              	<div className="components-card">
-	                <Card size="small">
-	                  {this.state.components.map((component, index) => (
-	                    getElement(component, index)
-	                  ))}
-	                </Card>
-                </div>
-                <div className="get-starter-files">
-                	<Button rounded large ghost color="secondary" onClick={this.getStarterFiles} label="Get my starter files!"/>
-                </div>
-              </div>
+            	<div>
+            		<div className="components-container">
+	              	<div className="mockup">
+	              		<Heading headingLevel={1} content="What you drew" />
+	              		<img src={this.state.uploadedImage}/>
+	              	</div>
+	              	<div className="arrow">
+	              		<img src={arrow} />
+	              	</div>
+	              	<div className="components-card-phone">
+	              		<img className="phone" alt="phone" src={phone} />
+		                <Card size="small">
+		                  {this.state.components.map((component, index) => (
+		                    getElement(component, index)
+		                  ))}
+		                </Card>
+	                </div>
+	              </div>
+            	</div>
             }
 
             {!this.state.components &&
@@ -78,7 +94,7 @@ class Upload extends React.Component {
 	                <Paragraph text="Watch your ideas come to life." />
 	              </div>
 	              <div className="upload-dropzone">
-		              <UploadBox className="upload-dropzone" setComponents={this.setComponents} label="Drag files to upload" />
+		              <UploadBox className="upload-dropzone" setComponents={this.setComponents} setImage={this.setImage} label="Drag files to upload" />
 		          	</div>
              </div>
             }
@@ -87,7 +103,6 @@ class Upload extends React.Component {
             <img alt="bg" src={bg} />
           </div>
         </div>
-      </div>
     );
   }
 }

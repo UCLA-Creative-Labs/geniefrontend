@@ -1,5 +1,6 @@
-.upload-page-container{
-	padding: 100px;
+.page.upload{
+	display: flex;
+	align-items: center;
 }
 
 .upload-container{
@@ -10,6 +11,7 @@
 	align-items: center;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	width: 100%;
 	box-sizing: border-box;
 
 	.upload-dropzone{
@@ -51,10 +53,50 @@
     }
 }
 
-.components-card{
-	.card{
-		margin: 0;
-		margin-bottom: 50px;
+.components-container{
+	margin: auto;
+	display: flex;
+	align-items: center;
+	width: 80%;
+	height: 100%;
+	justify-content: space-between;
+
+	.mockup{
+		.heading{
+			padding: 0;
+		}
+		overflow: hidden;
+		width: 25%;
+		min-width: 350px;
+		img{
+			width: 100%;
+		}
+	}
+
+	.arrow{
+		width: 100px;
+		img{
+			width: 100%;
+		}
+	}
+
+	.components-card-phone{
+		width: 25%;
+		min-width: 250px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		.phone{
+			width: 105%;
+			position: absolute;
+		}
+
+		.card{
+			width: 95%;
+			margin: 0;
+			overflow: hidden;
+		}
 	}
 }
 

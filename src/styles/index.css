@@ -754,6 +754,9 @@ body {
   .info .example-container {
     display: none; } }
 
+.page.upload {
+  display: flex;
+  align-items: center; }
 .upload-page-container {
   padding: 100px; }
   .upload-page-container .get-starter-files {
@@ -768,6 +771,7 @@ body {
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: 100%;
   box-sizing: border-box; }
   .upload-container .upload-dropzone button {
     background-color: #FCFCFF;
@@ -799,9 +803,39 @@ body {
     max-height: 80vh;
     min-height: 60vh; }
 
-.components-card .card {
-  margin: 0;
-  margin-bottom: 50px; }
+.components-container {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  height: 100%;
+  justify-content: space-between; }
+  .components-container .mockup {
+    overflow: hidden;
+    width: 25%;
+    min-width: 350px; }
+    .components-container .mockup .heading {
+      padding: 0; }
+    .components-container .mockup img {
+      width: 100%; }
+  .components-container .arrow {
+    width: 100px; }
+    .components-container .arrow img {
+      width: 100%; }
+  .components-container .components-card-phone {
+    width: 25%;
+    min-width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; }
+    .components-container .components-card-phone .phone {
+      width: 105%;
+      position: absolute; }
+    .components-container .components-card-phone .card {
+      width: 95%;
+      margin: 0;
+      overflow: hidden; }
 
 @font-face {
   font-family: 'Avenir Black';
@@ -832,8 +866,8 @@ body {
   justify-content: center; }
   .page-container .phone-container {
     display: flex;
-    justify-content: center;
-    width: 650px; }
+    justify-content: center; }
     .page-container .phone-container .phone {
-      position: absolute;
-      height: 611px; }
+      z-index: 10;
+      width: 110%;
+      position: absolute; }
