@@ -81,19 +81,19 @@ body {
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
   transition: all 0.5s ease; }
+  .btn span:last-child:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s; }
   .btn span {
     cursor: pointer;
     display: inline-block;
     position: relative;
     transition: 0.5s;
     padding-right: 0; }
-    .btn span:after {
-      content: '\00bb';
-      position: absolute;
-      opacity: 0;
-      top: 0;
-      right: -20px;
-      transition: 0.5s; }
     .btn span:hover {
       color: #E5DAF0; }
   .btn-primary {
@@ -136,7 +136,7 @@ body {
     -webkit-box-shadow: 1px 2.5px 1px #5D5869;
     -moz-box-shadow: 1px 2.5px 1px #5D5869;
     box-shadow: 1px 2.5px 1px #5D5869; }
-    .btn:hover span {
+    .btn:hover span:last-child {
       padding-right: 25px; }
   .btn:active {
     background-color: #E5DAF0;

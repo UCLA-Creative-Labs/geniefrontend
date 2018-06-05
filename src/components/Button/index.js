@@ -19,7 +19,7 @@ const Button = (props) => {
   return (
     <div>
       <button className={`btn btn-${props.color} ${buttonClasses.join(' ')}`} onClick={props.onClick}>
-        <span>{props.label}</span>
+        <span>{props.label} </span>
         {props.secondaryLabel && <span className="light">{props.secondaryLabel}</span>}
       </button>
     </div>

@@ -11,13 +11,7 @@
 	margin: .2rem;
 	outline: 0px solid black;
 
-	span {
-		cursor: pointer;
-		display: inline-block;
-		position: relative;
-		transition: 0.5s;
-		padding-right: 0;
-
+	span:last-child{
 		&:after {
 			content: '\00bb';
 			position: absolute;
@@ -26,6 +20,15 @@
 			right: -20px;
 			transition: 0.5s;
 		}
+	}
+
+	span {
+		cursor: pointer;
+		display: inline-block;
+		position: relative;
+		transition: 0.5s;
+		padding-right: 0;
+
 		&:hover {
 			color: $secondary;
 		}
@@ -87,7 +90,7 @@
 
 	@include hover-state {
 
-		span {
+		span:last-child {
 			padding-right: 25px;
 		}
 
