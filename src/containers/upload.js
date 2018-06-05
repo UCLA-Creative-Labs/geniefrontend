@@ -67,7 +67,8 @@ class Upload extends React.Component {
       marginTop: '62px',
       width: '300px',
       height: '424px',
-      overflow: 'scroll',
+      overflowY: 'scroll',
+      overflowX: 'hidden',
       padding: '2px 0 0 0'
     };
 
