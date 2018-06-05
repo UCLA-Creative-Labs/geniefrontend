@@ -46,7 +46,8 @@ class UploadBox extends React.Component {
 
   async handleSendFile(payload) {
     try {
-			this.props.setLoading(true);
+    	this.props.setLoading(true);
+      
       const res = await sendFile({
         file: payload.file
       });
@@ -66,38 +67,38 @@ class UploadBox extends React.Component {
     }
   }
 
-  async readFile(acceptedFiles, rejectedFiles) {
-    try {
-      const data = await fileToBase64(acceptedFiles[0]);
+  async readFile(acceptedFiles, rejectedFiles){
+		try{
+			const data = await fileToBase64(acceptedFiles[0]);
 
-      if (data.err) {
-        throw new Error(data.err);
-      }
+			if(data.err){
+				throw new Error(data.err);
+			}
 
-      this.props.setLoading(true);
+			this.props.setLoading(true);
 
-      const res = await sendFile({
-        file: data.file
-      });
+			const res = await sendFile({
+				file: data.file
+			});
 
-      if (res.err) {
-        throw new Error(res.err);
-      }
+			if(res.err){
+				throw new Error(res.err);
+			} 
 
-      this.props.setComponents(res.components);
-      this.props.setImage(data.file);
-      this.props.setLoading(false);
-			
-      this.setState({
-        acceptedFiles,
-        rejectedFiles,
-      });
-    } catch (e) {
-      this.setState({
-        err: e.message
-      });
-    }
-  }
+			this.setState({
+				acceptedFiles: acceptedFiles,
+				rejectedFiles: rejectedFiles,
+			});
+
+			this.props.setComponents(res.components);
+			this.props.setImage(data.file);
+			this.props.setLoading(false);
+		} catch(e){
+			this.setState({
+				err: e.message
+			})
+		}
+	}
 
   async initWebcam() {
     this.setState({

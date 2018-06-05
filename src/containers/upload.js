@@ -26,15 +26,25 @@ class Upload extends React.Component {
       loading: false,
     };
     this.getStarterFiles = this.getStarterFiles.bind(this);
-    this.setComponents = this.setComponents.bind(this);
     this.setImage = this.setImage.bind(this);
+    this.setComponents = this.setComponents.bind(this);
     this.setLoading = this.setLoading.bind(this);
   }
 
-  async setComponents(components) {
+	async setComponents(components){
   	this.setState({
-  		components
+  		components: components
   	});
+  }
+
+  setImage(image){
+  	this.setState({
+  		uploadedImage: image,
+  	})
+  }
+
+  setLoading(mode){
+  	loading: mode
   }
 
   setImage(image) {
@@ -84,7 +94,7 @@ class Upload extends React.Component {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      width: '80%'
+      width: '80%',
     };
 
     return (
@@ -133,7 +143,7 @@ class Upload extends React.Component {
                   <Paragraph text="Watch your ideas come to life." />
                 </div>
                 <div className="upload-dropzone">
-                  <UploadBox className="upload-dropzone" setLoading={this.setLoading} setComponents={this.setComponents} setImage={this.setImage} label="Drag files to upload" />                
+                  <UploadBox className="upload-dropzone" setImage={this.setImage} setComponents={this.setComponents} setLoading={this.setLoading} label="Drag files to upload" />
                 </div>
               </div>
             }
@@ -148,8 +158,12 @@ class Upload extends React.Component {
               <div style={{ flex: '7' }}>
                 <h1>Your app on a phone.</h1>
                 <div style={{ width: '70%' }}>
-                  <h3 style={{color: '#5D5869', margin: '50px 0 50px 0', lineHeight: '145%', fontSize: '21px', }}>We took your drawing and generated this working prototype. Download the code for your React application below.</h3>
-                  <Button rounded ghost large color="secondary" label="Download your prototype" onClick={() => this.getStarterFiles()} />
+                  <h3 style={{
+                    color: '#5D5869', margin: '50px 0 50px 0', lineHeight: '145%', fontSize: '21px',
+                  }}
+                  >We took your drawing, and generated this prototype.  Download the code for your react application below.
+                  </h3>
+                  <Button rounded ghost large color="secondary" label="Download your prototype" onClick={this.getStarterFiles} />
                 </div>
               </div>
               <div className="phone-container" style={{ flex: '4' }}>
