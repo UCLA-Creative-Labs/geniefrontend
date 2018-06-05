@@ -46,6 +46,8 @@ class UploadBox extends React.Component {
 
   async handleSendFile(payload) {
     try {
+    	this.props.setLoading(true);
+
       const res = await sendFile({
         file: payload.file
       });
@@ -54,11 +56,9 @@ class UploadBox extends React.Component {
         throw new Error(res.err);
       }
 
-      this.props.setUploadState({
-        components: res.components,
-        uploadedImage: payload.file,
-        loading: false,
-			});
+      this.props.setComponents(res.components);
+      this.props.setImage(payload.file);
+      this.props.setLoading(false);
 
     } catch (e) {
       this.setState({
@@ -75,9 +75,7 @@ class UploadBox extends React.Component {
         throw new Error(data.err);
       }
 
-      this.props.setUploadState({
-        loading: true,
-      });
+      this.props.setLoading(true);
 
 			const res = await sendFile({
         file: data.file
@@ -86,17 +84,15 @@ class UploadBox extends React.Component {
       if (res.err) {
         throw new Error(res.err);
       }
-
-      this.props.setUploadState({
-        components: res.components,
-        uploadedImage: data.file,
-        loading: false,
-			});
 			
       this.setState({
         acceptedFiles,
         rejectedFiles,
       });
+
+      this.props.setComponents(res.components);
+      this.props.setImage(data.file);
+      this.props.setLoading(false);
     } catch (e) {
       this.setState({
         err: e.message
