@@ -81,7 +81,9 @@ class Upload extends React.Component {
 
     const phoneStyles = {
       display: 'flex',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '80%',
     };
 
     return (
