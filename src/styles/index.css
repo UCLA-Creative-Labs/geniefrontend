@@ -799,8 +799,11 @@ body {
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 100%;
+  width: 80%;
   box-sizing: border-box; }
+  @media (max-width: 900px) {
+    .upload-container {
+      width: 100%; } }
   .upload-container .upload-dropzone button {
     background-color: #FCFCFF;
     border: none;
@@ -832,12 +835,14 @@ body {
     min-height: 60vh; }
 
 .components-container {
-  margin: auto;
   display: flex;
   align-items: center;
-  width: 80%;
   height: 100%;
+  margin: auto;
   justify-content: space-between; }
+  @media (max-width: 1050px) {
+    .components-container {
+      width: 100%; } }
   .components-container .mockup {
     overflow: hidden;
     width: 25%;
@@ -852,7 +857,8 @@ body {
       .components-container .mockup .image-container img {
         width: 100%; }
   .components-container .arrow {
-    width: 100px;
+    min-width: 70px;
+    max-width: 110px;
     margin: 0px 25px 0 25px; }
     .components-container .arrow img {
       width: 100%; }

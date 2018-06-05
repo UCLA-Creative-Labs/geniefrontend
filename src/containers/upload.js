@@ -73,7 +73,7 @@ class Upload extends React.Component {
     return (
       <div>
         <div className="page-container">
-          <div className="page upload">
+          <div className="page upload flex-center-inside">
             { this.state.loading &&
             <div className="loading">
               <div className="spinner">
@@ -84,7 +84,7 @@ class Upload extends React.Component {
             </div>
           	}
             {!this.state.loading && this.state.components &&
-            <div style={{ overflow: 'hidden', }}>
+            <div style={{ overflow: 'hidden', width: '90%' }}>
               <div className="components-container">
                 <div className="mockup">
                   <Heading headingLevel={1} content="What you drew" />
@@ -128,7 +128,7 @@ class Upload extends React.Component {
         {this.state.components &&
           <div className="page-container">
             <div className="page" style={phoneStyles}>
-              <div>
+              <div style={{ flex: '7' }}>
                 <h1>Your component on a phone.</h1>
                 <div style={{ width: '70%' }}>
                   <h3 style={{
@@ -139,7 +139,7 @@ class Upload extends React.Component {
                   <Button rounded ghost large color="secondary" label="Download your prototype" onClick={() => getStarterFiles()} />
                 </div>
               </div>
-              <div className="phone-container">
+              <div className="phone-container" style={{ flex: '4' }}>
                 <img className="phone" alt="phone" src={phone} />
                 <div style={cardStyle}>
                   <Card size="small" >

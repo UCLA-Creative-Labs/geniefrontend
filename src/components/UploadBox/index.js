@@ -40,6 +40,31 @@ class UploadBox extends React.Component {
     this.readFile = this.readFile.bind(this);
     this.initWebcam = this.initWebcam.bind(this);
     this.handleWebcamImage = this.handleWebcamImage.bind(this);
+    this.handleSendFile = this.handleSendFile.bind(this);
+  }
+
+
+  async handleSendFile(payload) {
+    try {
+      const res = await sendFile({
+        file: payload.file
+      });
+
+      if (res.err) {
+        throw new Error(res.err);
+      }
+
+      this.props.setUploadState({
+        components: res.components,
+        uploadedImage: payload.file,
+        loading: false,
+			});
+
+    } catch (e) {
+      this.setState({
+        err: e.message
+      })
+    }
   }
 
   async readFile(acceptedFiles, rejectedFiles) {
@@ -54,7 +79,7 @@ class UploadBox extends React.Component {
         loading: true,
       });
 
-      const res = await sendFile({
+			const res = await sendFile({
         file: data.file
       });
 
@@ -62,15 +87,15 @@ class UploadBox extends React.Component {
         throw new Error(res.err);
       }
 
-      this.setState({
-        acceptedFiles,
-        rejectedFiles,
-      });
-
       this.props.setUploadState({
         components: res.components,
         uploadedImage: data.file,
         loading: false,
+			});
+			
+      this.setState({
+        acceptedFiles,
+        rejectedFiles,
       });
     } catch (e) {
       this.setState({
@@ -86,12 +111,17 @@ class UploadBox extends React.Component {
   }
 
   async handleWebcamImage(base64String) {
-		this.setState(state => {
-			state.file= base64String;
-	 	}, ()=>{
-			sendFile(base64String);
+    this.setState((state) => {
+      state.file = base64String;
+      state.webcam = false;
+    }, () => {
+      this.handleSendFile({
+        file: base64String,
+        err: false,
+      });
 	 	});
   }
+
 
   render() {
     const dropZoneStyle = {
@@ -115,7 +145,7 @@ class UploadBox extends React.Component {
       <div>
         {!this.state.webcam &&
 			 	<div>
-					<Dropzone
+			 	  <Dropzone
 			 	    ref={(node) => { dropzoneRef = node; }}
 			 	    accept="image/jpeg, image/png, image/jpg"
   					style={dropZoneStyle}
@@ -144,16 +174,16 @@ class UploadBox extends React.Component {
 			 	            <p>&uarr;</p>
 			 	          </div>
 			 	          <h1>{label}</h1>
-              </div>);
+			 	        </div>);
 			 	    }}
      			</Dropzone>
-			 	  <Button rounded large ghost color="secondary" onClick={() => { dropzoneRef.open(); }} label="Choose a file" />
+			 	  <Button rounded large ghost color="secondary" onClick={() => { dropzoneRef.open(); }} label="Choose a file" style={{marginBottom: '5px'}} />
 			 	  <Button rounded large ghost color="secondary" onClick={() => this.initWebcam()} label="Use your webcam" />
 			 	</div>
         }
         {this.state.webcam &&
 					<div className="webcam-container">
-						<WebcamCapture onCapture={this.handleWebcamImage} />
+					  <WebcamCapture onCapture={this.handleWebcamImage} />
 					</div>
         }
 
@@ -161,7 +191,7 @@ class UploadBox extends React.Component {
           { this.state.err ? this.state.err : '' }
         </span>
       </div>
-  </div>);
+    </div>);
   }
 }
 
