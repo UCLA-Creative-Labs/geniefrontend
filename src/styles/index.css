@@ -832,7 +832,8 @@ body {
       position: absolute; }
     .components-container .components-card-phone .card {
       width: 95%;
-      margin: 0; }
+      margin: 0;
+      overflow: hidden; }
 
 @font-face {
   font-family: 'Avenir Black';
