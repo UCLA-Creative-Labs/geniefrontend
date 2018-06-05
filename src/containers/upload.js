@@ -21,23 +21,15 @@ class Upload extends React.Component {
       // components: ['SearchBar','h1', 'Image', 'Paragraph'],
       components: null,
       err: false,
-      uploadedImage: null
+      uploadedImage: null,
+      loading: false,
     };
-    this.setComponents = this.setComponents.bind(this);
     this.getStarterFiles = this.getStarterFiles.bind(this);
-    this.setImage = this.setImage.bind(this);
+    this.setUploadState = this.setUploadState.bind(this);
   }
 
-  async setComponents(components) {
-    this.setState({
-      components: components,
-    });
-  }
-
-  setImage(image){
-  	this.setState({
-  		uploadedImage: image
-  	})
+  setUploadState(state){
+  	this.setState(state);
   }
 
   async getStarterFiles(){
@@ -81,7 +73,16 @@ class Upload extends React.Component {
       <div>
         <div className="page-container">
           <div className="page upload">
-              {this.state.components &&
+          		{ this.state.loading && 
+          				<div className="loading">
+          					<div className="spinner">
+										  <div className="dot1"></div>
+										  <div className="dot2"></div>
+										</div>
+										<Heading headingLevel={2} content="Generating your mockup..."/>
+          				</div>
+          		}
+              {!this.state.loading && this.state.components &&
                 <div style={{overflow: 'hidden',}}>
                   <div className="components-container">
                     <div className="mockup">
@@ -107,16 +108,16 @@ class Upload extends React.Component {
                 </div>
               }
 
-              {!this.state.components &&
-              <div className="upload-container">
-                  <div className="upload-heading">
-                    <Heading headingLevel={1} content="Upload your image" />
-                    <Paragraph text="Watch your ideas come to life." />
-                  </div>
-                  <div className="upload-dropzone">
-                    <UploadBox className="upload-dropzone" setComponents={this.setComponents} setImage={this.setImage} label="Drag files to upload" />
-                  </div>
-              </div>
+              {!this.state.loading && !this.state.components &&
+	              <div className="upload-container">
+	                  <div className="upload-heading">
+	                    <Heading headingLevel={1} content="Upload your image" />
+	                    <Paragraph text="Watch your ideas come to life." />
+	                  </div>
+	                  <div className="upload-dropzone">
+	                    <UploadBox className="upload-dropzone" setUploadState={this.setUploadState} label="Drag files to upload" />
+	                  </div>
+	              </div>
               }
             </div>
             <div className="bg-container">

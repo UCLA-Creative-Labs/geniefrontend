@@ -45,6 +45,10 @@ class UploadBox extends React.Component{
 				throw new Error(data.err);
 			}
 
+			this.props.setUploadState({
+				loading: true,
+			})
+
 			const res = await sendFile({
 				file: data.file
 			});
@@ -58,8 +62,11 @@ class UploadBox extends React.Component{
 				rejectedFiles: rejectedFiles,
 			});
 
-			this.props.setComponents(res.components);
-			this.props.setImage(data.file);
+			this.props.setUploadState({
+				components: res.components,
+				uploadedImage: data.file,
+				loading: false,
+			});
 		} catch(e){
 			this.setState({
 				err: e.message
