@@ -62,6 +62,9 @@
 	justify-content: space-between;
 
 	.mockup{
+		.heading{
+			padding: 0;
+		}
 		overflow: hidden;
 		width: 25%;
 		min-width: 350px;

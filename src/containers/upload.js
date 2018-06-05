@@ -66,22 +66,25 @@ class Upload extends React.Component {
       <div className="page-container">
         <div className="page upload">
             {this.state.components &&
-              <div className="components-container">
-              	<div className="mockup">
-              		<img src={this.state.uploadedImage}/>
-              	</div>
-              	<div className="arrow">
-              		<img src={arrow} />
-              	</div>
-              	<div className="components-card-phone">
-              		<img className="phone" alt="phone" src={phone} />
-	                <Card size="small">
-	                  {this.state.components.map((component, index) => (
-	                    getElement(component, index)
-	                  ))}
-	                </Card>
-                </div>
-              </div>
+            	<div>
+            		<div className="components-container">
+	              	<div className="mockup">
+	              		<Heading headingLevel={1} content="What you drew" />
+	              		<img src={this.state.uploadedImage}/>
+	              	</div>
+	              	<div className="arrow">
+	              		<img src={arrow} />
+	              	</div>
+	              	<div className="components-card-phone">
+	              		<img className="phone" alt="phone" src={phone} />
+		                <Card size="small">
+		                  {this.state.components.map((component, index) => (
+		                    getElement(component, index)
+		                  ))}
+		                </Card>
+	                </div>
+	              </div>
+            	</div>
             }
 
             {!this.state.components &&

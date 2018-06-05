@@ -812,6 +812,8 @@ body {
     overflow: hidden;
     width: 25%;
     min-width: 350px; }
+    .components-container .mockup .heading {
+      padding: 0; }
     .components-container .mockup img {
       width: 100%; }
   .components-container .arrow {
