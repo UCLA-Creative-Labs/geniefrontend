@@ -2,8 +2,8 @@
 
 .pg-container {
   width: calc(100% - 2*$padding-lr);
-  padding: 0 $padding-lr 0 $padding-lr;
-  margin: 10px 0 10px 0;
+  padding: 10px $padding-lr 0 $padding-lr;
+  // margin: 10px 0 10px 0;
   text-align: left;
 
   .pg {

@@ -200,8 +200,7 @@ body {
   width: 400px;
   margin: 15px 15px 0 15px;
   height: auto;
-  overflow: visible;
-  padding: 5px 0 5px 0; }
+  overflow: visible; }
   .card-small {
     width: 300px; }
   .card-medium {
@@ -237,7 +236,7 @@ body {
   display: flex;
   width: calc(100% - 2*$padding-lr);
   justify-content: space-between;
-  padding: 8px 20px 8px 20px;
+  padding: 10px 20px 2px 20px;
   height: 30px;
   align-items: center; }
   .stepper h1 {
@@ -312,8 +311,7 @@ body {
 
 .pg-container {
   width: calc(100% - 2*$padding-lr);
-  padding: 0 20px 0 20px;
-  margin: 10px 0 10px 0;
+  padding: 10px 20px 0 20px;
   text-align: left; }
   .pg-container .pg {
     font-size: 16px;
@@ -347,10 +345,9 @@ body {
   font-style: normal; }
 
 .heading {
-  padding: 0 20px 0 20px;
+  padding: 12px 20px 10px 20px;
   width: calc(100% - 2*$padding-lr);
   height: auto;
-  margin: 12px 0 10px 0;
   text-align: left; }
   .heading h1, .heading h2, .heading h3 {
     margin: 0; }
@@ -759,6 +756,9 @@ body {
 
 .upload-page-container {
   padding: 100px; }
+  .upload-page-container .get-starter-files {
+    align-items: center;
+    display: flex; }
 
 .upload-container {
   margin: auto;
