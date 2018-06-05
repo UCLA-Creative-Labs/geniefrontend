@@ -9,7 +9,7 @@ import Heading from '../components/Heading';
 import Paragraph from '../components/Paragraph';
 import { getElement } from '../config/config';
 
-import { getStarterFiles } from '../api/api';
+import { getStarterFiles, sendFile } from '../api/api';
 
 import bg from '../assets/images/bg-gradient-2.png';
 import phone from '../assets/images/iphone.png';
@@ -26,25 +26,42 @@ class Upload extends React.Component {
       loading: false,
     };
     this.getStarterFiles = this.getStarterFiles.bind(this);
-    this.setImage = this.setImage.bind(this);
-    this.setComponents = this.setComponents.bind(this);
-    this.setLoading = this.setLoading.bind(this);
+    this.setUploadState = this.setUploadState.bind(this);
+    this.sendFile = this.sendFile.bind(this);
   }
 
-	async setComponents(components){
-  	this.setState({
-  		components: components
-  	});
+  setUploadState(state, callback){
+  	this.setState(state, callback);
   }
 
-  setImage(image){
-  	this.setState({
-  		uploadedImage: image,
-  	})
-  }
+  async sendFile(){
+   	if(!this.state.uploadedImage){
+   		return;
+   	}
 
-  setLoading(mode){
-  	loading: mode
+    try {
+    	this.setState({
+    		loading: true,
+    	});
+
+      const res = await sendFile({
+        file: this.state.uploadedImage
+      });
+
+      if(res.err) {
+        throw new Error(res.err);
+      }
+
+      this.setState({
+      	components: res.components,
+      	loading: false,
+      });
+
+    } catch (e) {
+      this.setState({
+        err: e.message
+      })
+    }
   }
 
   async getStarterFiles() {
@@ -132,7 +149,7 @@ class Upload extends React.Component {
                   <Paragraph text="Watch your ideas come to life." />
                 </div>
                 <div className="upload-dropzone">
-                  <UploadBox className="upload-dropzone" setImage={this.setImage} setComponents={this.setComponents} setLoading={this.setLoading} label="Drag files to upload" />
+                  <UploadBox className="upload-dropzone" setUploadState={this.setUploadState} sendFile={this.sendFile} label="Drag files to upload" />
                 </div>
               </div>
             }
