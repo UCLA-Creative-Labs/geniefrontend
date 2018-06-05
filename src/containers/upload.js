@@ -64,6 +64,17 @@ class Upload extends React.Component {
     }
   }
 
+  setImage(image) {
+  	this.setState({
+  		uploadedImage: image,
+  	})
+  }
+
+  setLoading(mode) {
+  	loading: mode
+  }
+
+
   async getStarterFiles() {
     if (!this.state.components) {
       return;
@@ -162,7 +173,7 @@ class Upload extends React.Component {
           <div className="page-container">
             <div className="page" style={phoneStyles}>
               <div style={{ flex: '7' }}>
-                <h1>Your component on a phone.</h1>
+                <h1>Your app on a phone.</h1>
                 <div style={{ width: '70%' }}>
                   <h3 style={{
                     color: '#5D5869', margin: '50px 0 50px 0', lineHeight: '145%', fontSize: '21px',
