@@ -757,8 +757,9 @@ body {
   .info .example-container {
     display: none; } }
 
-.upload-page-container {
-  padding: 100px; }
+.page.upload {
+  display: flex;
+  align-items: center; }
 
 .upload-container {
   margin: auto;
@@ -768,6 +769,7 @@ body {
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
+  width: 100%;
   box-sizing: border-box; }
   .upload-container .upload-dropzone button {
     background-color: #FCFCFF;

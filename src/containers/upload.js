@@ -55,7 +55,6 @@ class Upload extends React.Component {
     return (
       <div className="page-container">
         <div className="page upload">
-          <div className="upload-page-container">
             {this.state.components &&
               <div>
               	<div className="components-card">
@@ -87,7 +86,6 @@ class Upload extends React.Component {
             <img alt="bg" src={bg} />
           </div>
         </div>
-      </div>
     );
   }
 }

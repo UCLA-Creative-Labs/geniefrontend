@@ -1,5 +1,6 @@
-.upload-page-container{
-	padding: 100px;
+.page.upload{
+	display: flex;
+	align-items: center;
 }
 
 .upload-container{
@@ -10,6 +11,7 @@
 	align-items: center;
 	justify-content: space-around;
 	flex-wrap: wrap;
+	width: 100%;
 	box-sizing: border-box;
 
 	.upload-dropzone{
