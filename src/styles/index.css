@@ -802,20 +802,35 @@ body {
     min-height: 60vh; }
 
 .components-container {
+  margin: auto;
   display: flex;
   align-items: center;
-  width: 100%; }
-  .components-container .components-card {
-    width: 26%;
+  width: 80%;
+  height: 100%;
+  justify-content: space-between; }
+  .components-container .mockup {
+    overflow: hidden;
+    width: 25%;
+    min-width: 350px; }
+    .components-container .mockup img {
+      width: 100%; }
+  .components-container .arrow {
+    width: 100px; }
+    .components-container .arrow img {
+      width: 100%; }
+  .components-container .components-card-phone {
+    width: 25%;
+    min-width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative; }
-    .components-container .components-card .phone {
+    .components-container .components-card-phone .phone {
       width: 105%;
       position: absolute; }
-    .components-container .components-card .card {
-      width: 95%; }
+    .components-container .components-card-phone .card {
+      width: 95%;
+      margin: 0; }
 
 @font-face {
   font-family: 'Avenir Black';
