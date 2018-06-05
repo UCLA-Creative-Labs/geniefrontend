@@ -1,10 +1,10 @@
 @import "../../config/styles";
 
 .heading {
-    padding: 0 $padding-lr 0 $padding-lr;
+    padding: 12px $padding-lr 10px $padding-lr;
     width: calc(100% - 2*$padding-lr);
     height: auto;
-    margin: 12px 0 10px 0;
+    // margin: 12px 0 10px 0;
     text-align: left;
 
     h1,h2,h3 {
