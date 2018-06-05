@@ -129,7 +129,8 @@ class Upload extends React.Component {
               <div>
                 <h1>Your component on a phone.</h1>
                 <div style={{width: '70%'}}>
-                  <h3 style={{color: '#5D5869', marginTop: '50px', lineHeight: '145%' }}>We took your drawing, and generated this prototype.  Download the code for your react application below.</h3>
+                  <h3 style={{color: '#5D5869', margin: '50px 0 50px 0', lineHeight: '145%', fontSize: '21px', }}>We took your drawing, and generated this prototype.  Download the code for your react application below.</h3>
+                  <Button rounded ghost large color="secondary" label="Download your prototype" onClick={() => getStarterFiles()} />
                 </div>
               </div>
               <div className="phone-container">
