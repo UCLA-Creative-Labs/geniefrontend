@@ -43,7 +43,7 @@ class Upload extends React.Component {
 				throw new Error(res.err);
 			}
 
-			download(res.blob, 'MyProject.zip');
+			download(res.blob, 'your_genie_app.zip');
 		} catch(e){
 			this.setState({
 				err: e.message
