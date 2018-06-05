@@ -1,4 +1,5 @@
 import React from 'react';
+import download from 'downloadjs';
 
 import UploadBox from '../components/UploadBox';
 import Card from '../components/Card';
@@ -8,11 +9,10 @@ import Paragraph from '../components/Paragraph';
 import { getElement } from '../config/config';
 
 import { getStarterFiles } from '../api/api';
-import download from 'downloadjs';
 
 import bg from '../assets/images/bg-gradient-2.png';
 import phone from '../assets/images/iphone.png';
-import arrow from '../assets/images/arrow.png';
+import arrow from '../assets/images/arrow2.png';
 
 class Upload extends React.Component {
   constructor(props) {
