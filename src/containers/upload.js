@@ -28,6 +28,7 @@ class Upload extends React.Component {
     this.getStarterFiles = this.getStarterFiles.bind(this);
     this.setUploadState = this.setUploadState.bind(this);
     this.sendFile = this.sendFile.bind(this);
+    this.resetState = this.resetState.bind(this);
   }
 
   setUploadState(state, callback){
@@ -94,6 +95,15 @@ class Upload extends React.Component {
         err: e.message
       });
     }
+  }
+
+  resetState(){
+  	this.setState({
+  		components: null,
+      err: false,
+      uploadedImage: null,
+      loading: false,
+  	})
   }
 
   render() {
@@ -180,7 +190,8 @@ class Upload extends React.Component {
                   }}
                   >We took your drawing, and generated this prototype.  Download the code for your react application below.
                   </h3>
-                  <Button rounded ghost large color="secondary" label="Download your prototype" onClick={this.getStarterFiles} />
+                  <Button rounded ghost large color="secondary" label="Download" onClick={this.getStarterFiles} />
+                  <Button rounded ghost large color="secondary" label="Start another project" onClick={this.resetState} />
                 </div>
               </div>
               <div className="phone-container" style={{ flex: '4' }}>
